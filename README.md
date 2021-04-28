@@ -1,1 +1,2 @@
-# WhiteboardSDKIOS
+# WhiteboardSDK-IOS
+##说明

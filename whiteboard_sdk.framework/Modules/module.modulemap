@@ -1,0 +1,6 @@
+framework module whiteboard_sdk {
+  umbrella header "whiteboard_sdk.h"
+
+  export *
+  module * { export * }
+}

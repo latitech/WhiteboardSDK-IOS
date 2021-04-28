@@ -1,0 +1,34 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - AliyunOSSiOS (2.10.9)
+
+DEPENDENCIES:
+  - AFNetworking (~> 4.0)
+  - AliyunOSSiOS
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - AliyunOSSiOS
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AliyunOSSiOS: 13173e9eaf05d3816315319876025de3028ea31d
+
+PODFILE CHECKSUM: e2d4d9e35de12450a9680e3b7c10455f791cd90d
+
+COCOAPODS: 1.10.1

@@ -1,0 +1,74 @@
+{
+    "default": {
+        "DebugLevel": 1,
+        "OutPut": [
+            {
+                "type": "console",
+                "headHint": "sss",
+                "tailHint": "sss",
+                "logName": "default"
+            },
+            {
+                "type": "file",
+                "logName": "default",
+                "FileName": "default",
+                "FileFormat": ".log"
+            }
+        ]
+    },
+    "agora": {
+        "DebugLevel": 1,
+        "OutPut": [
+            {
+                "type": "file",
+                "FileName": "agora",
+                "FileFormat": ".log"
+            }
+        ]
+    },
+    "session": {
+        "DebugLevel": 1,
+        "OutPut": [
+            {
+                "type": "console",
+                "headHint": "sss",
+                "tailHint": "sss",
+                "logName": "test1"
+            },
+            {
+                "type": "file",
+                "logName": "test1",
+                "FileName": "session",
+                "FileFormat": ".log"
+            }
+        ]
+    },
+    "test2": {
+        "DebugLevel": 2,
+        "OutPut": [
+            {
+                "type": "console",
+                "headHint": "sss",
+                "tailHint": "sss",
+                "logName": "test2"
+            },
+            {
+                "type": "file",
+                "logName": "test2",
+                "FileName": "test2",
+                "FileFormat": ".log"
+            }
+        ]
+    },
+    "inputLog": {
+        "DebugLevel": 1,
+        "OutPut": [
+            {
+                "type": "file",
+                "logName": "inputLog",
+                "FileName": "inputLog",
+                "FileFormat": ".log"
+            }
+        ]
+    }
+}

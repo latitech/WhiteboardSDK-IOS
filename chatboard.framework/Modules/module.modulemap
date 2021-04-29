@@ -1,0 +1,6 @@
+framework module chatboard {
+  umbrella header "chatboard.h"
+
+  export *
+  module * { export * }
+}

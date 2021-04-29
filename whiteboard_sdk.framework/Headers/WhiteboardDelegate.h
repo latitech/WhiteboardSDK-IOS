@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
   * @param  room 房间信息
   * @param me   个人信息
   */
+@optional
 -(void) onJoinSuccess:(WBRoom *)room who:(WBRoomMember *)me;
 
  /**

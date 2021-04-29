@@ -12,19 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol WhiteboardUIDelegate <NSObject>
-
-
-@required
--(void)changeInputConfig:(WBInputConfig *)inputConfig_;
-@required
--(void)changeCurrentPageNumber:(NSInteger)pageNo_;
-
--(void)changeWidgetNumber:(NSString *)widgetId_ pageNumber:(int)pageNo_;
--(void)deleteWidget:(NSString *)widgetId_;
--(void)downloadWidget:(WBActiveWidgetInfo *)widgetInfo_;
-
--(void)selectFile:(CGRect)frame_;
--(void)selectAlbum:(CGRect)frame_;
+-(void)presentViewController:(UIViewController *)controller_;
+-(void)createResourceView;
 @end
 
 NS_ASSUME_NONNULL_END

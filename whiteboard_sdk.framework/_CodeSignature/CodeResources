@@ -8,45 +8,9 @@
 		<data>
 		hSgvUUcFSxJbXuz4YvgHTx8a6Sw=
 		</data>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/Info.plist</key>
+		<key>Headers/Constant.h</key>
 		<data>
-		Kw2NWm2efOdbJuQDwVymOep4exM=
-		</data>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/Pods_whiteboard_sdk</key>
-		<data>
-		fiLMgbky7+q8lwTRa+YNkgcJKUQ=
-		</data>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeDirectory</key>
-		<data>
-		EacfcXFlYedeMoQYE5zyIMlZJT4=
-		</data>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeRequirements</key>
-		<data>
-		SivYU6/yO9nTZScGhCCqdMFcmkg=
-		</data>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeRequirements-1</key>
-		<data>
-		HFVOVf4A1GvB82SqHDbslD4bWHI=
-		</data>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeResources</key>
-		<data>
-		naeFU5B9+mkw5aJJ/wKZmR6IbL4=
-		</data>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeSignature</key>
-		<data>
-		+wLYNHZ5loR50iAmrQ2Q0Ks0a0Y=
-		</data>
-		<key>Frameworks/chatboard.framework/Info.plist</key>
-		<data>
-		G692UTPaAbXQT30NqA/+EJVjMzY=
-		</data>
-		<key>Frameworks/chatboard.framework/_CodeSignature/CodeResources</key>
-		<data>
-		L29QpzzqdtZOYkr/M7diojmlOz0=
-		</data>
-		<key>Frameworks/chatboard.framework/chatboard</key>
-		<data>
-		7ArM+Otqgdl0LZM7MPqCQ8sFxec=
+		bF6loLAqO30Xfsj3miXvAAKQbIU=
 		</data>
 		<key>Headers/WBActiveWidgetInfo.h</key>
 		<data>
@@ -94,11 +58,7 @@
 		</data>
 		<key>Headers/WhiteboardControl.h</key>
 		<data>
-		QDz/Y8d10iKrIn/2xC0xwRE4el8=
-		</data>
-		<key>Headers/WhiteboardControllerDelegate.h</key>
-		<data>
-		6ayyy9nkfvW3uHC7eq5sxI9wjpU=
+		cK8fgjNNb3oNYOtBN2cpjS85Dbo=
 		</data>
 		<key>Headers/WhiteboardDefine.h</key>
 		<data>
@@ -106,15 +66,15 @@
 		</data>
 		<key>Headers/WhiteboardDelegate.h</key>
 		<data>
-		6P2Tl9Da1/A7eNQe8AHLobil2M4=
+		URFhF49tR8hizg6X92NvDmgwQao=
 		</data>
 		<key>Headers/WhiteboardUIDelegate.h</key>
 		<data>
-		uJ/Yq5EcdQ4K1Kk3g8bcS9IZK7w=
+		5z5iy6vBJC7pbE6GXnovmyycaVg=
 		</data>
 		<key>Headers/WhiteboardView.h</key>
 		<data>
-		XY/ESvfTJH5oqtCorIeRN4V182c=
+		VEi97XHbTgToRSy+i2HjvMp7/10=
 		</data>
 		<key>Headers/whiteboard_sdk.h</key>
 		<data>
@@ -128,21 +88,33 @@
 		<data>
 		lC4kvcH3hZ8kc9iU4JBiFgMhyG0=
 		</data>
+		<key>ResourceViewController.nib/objects-11.0+.nib</key>
+		<data>
+		EDvamAbtytZe9bsG25YrjgVY65U=
+		</data>
+		<key>ResourceViewController.nib/runtime.nib</key>
+		<data>
+		6tVPz7cmWwp3//AiFnPSCTdzxMM=
+		</data>
+		<key>WBPageListView.nib</key>
+		<data>
+		ErVHYskhL/02AE0/oZKDUW0tmAM=
+		</data>
 		<key>WhiteboardMenuBar.nib/objects-11.0+.nib</key>
 		<data>
-		8Yt7WBniOz4IcCXlo3iD58lc58Q=
+		xCONVtbapwvI17G6S3ZMX5rNW44=
 		</data>
 		<key>WhiteboardMenuBar.nib/runtime.nib</key>
 		<data>
-		DmjZUTEaYksyp0MOutzak/5mVpo=
+		ycNp8JxEzz8OB3zLqgBMPeBcjFQ=
 		</data>
 		<key>WhiteboardPageControl.nib/objects-11.0+.nib</key>
 		<data>
-		lrOMOXwIOQuNq+UBOFFfzTiGS+o=
+		fP59PlP56pv8DKz2zegZLBIqHQM=
 		</data>
 		<key>WhiteboardPageControl.nib/runtime.nib</key>
 		<data>
-		oY2YZIGOrI4MiZigw69AA4riyPw=
+		P/mBgPdGTa7/akPi42rDBJG0l1I=
 		</data>
 		<key>loadingAnimation.json</key>
 		<data>
@@ -170,114 +142,15 @@
 			2LSJ3udORXn7IEu4blHdxDsRdYpYtM3vhXLEnUKWls4=
 			</data>
 		</dict>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/Info.plist</key>
+		<key>Headers/Constant.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Kw2NWm2efOdbJuQDwVymOep4exM=
+			bF6loLAqO30Xfsj3miXvAAKQbIU=
 			</data>
 			<key>hash2</key>
 			<data>
-			pSA8CWHAgEI9A1fMnzjRM0GVsZe3tGlFf4PuV8g3j44=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/Pods_whiteboard_sdk</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fiLMgbky7+q8lwTRa+YNkgcJKUQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			sBH5Mg1UWpJIEidu49D4luDTGfPeS+2u5XR1YbSLwrg=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeDirectory</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			EacfcXFlYedeMoQYE5zyIMlZJT4=
-			</data>
-			<key>hash2</key>
-			<data>
-			eHxA9UlZvNOJCKrDBkXGGmjbEb+qIOvJ6xiOWyP42Xo=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeRequirements</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			SivYU6/yO9nTZScGhCCqdMFcmkg=
-			</data>
-			<key>hash2</key>
-			<data>
-			p0HrfF/5yKzMRYb/T+6/awb8uMHLkfrGvTB9Q1UL5es=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeRequirements-1</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HFVOVf4A1GvB82SqHDbslD4bWHI=
-			</data>
-			<key>hash2</key>
-			<data>
-			ppLoAgAL9duHY+sORUt4dRBAMUqWRKCahvc3yAJbreM=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			naeFU5B9+mkw5aJJ/wKZmR6IbL4=
-			</data>
-			<key>hash2</key>
-			<data>
-			6MCjCfTaZ38hl2KQSz5LReIgC8lAfnGjmUbaxzlqKHo=
-			</data>
-		</dict>
-		<key>Frameworks/Pods_whiteboard_sdk.framework/_CodeSignature/CodeSignature</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+wLYNHZ5loR50iAmrQ2Q0Ks0a0Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			iAndGhQGhqsoLkAldjpYcoz9LXc2YzKZOCHtWeXYO0A=
-			</data>
-		</dict>
-		<key>Frameworks/chatboard.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			G692UTPaAbXQT30NqA/+EJVjMzY=
-			</data>
-			<key>hash2</key>
-			<data>
-			vXHmfB6vjVHb0d1RDFD+5MbQsO51BItlhWRZkemfMO0=
-			</data>
-		</dict>
-		<key>Frameworks/chatboard.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			L29QpzzqdtZOYkr/M7diojmlOz0=
-			</data>
-			<key>hash2</key>
-			<data>
-			aD3x7p2aTUK4VxDz0pA5Q2OJwb2g5fBTsc9m6DV93gI=
-			</data>
-		</dict>
-		<key>Frameworks/chatboard.framework/chatboard</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7ArM+Otqgdl0LZM7MPqCQ8sFxec=
-			</data>
-			<key>hash2</key>
-			<data>
-			UTpkzyCMF/NKNaaKT0KCJ5k5KusTmQZmBqtMWesycbA=
+			lp8sIa/CfnvDUlHXtxaJ7wI+b/OHVhdD2TW4GOHysBk=
 			</data>
 		</dict>
 		<key>Headers/WBActiveWidgetInfo.h</key>
@@ -405,22 +278,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QDz/Y8d10iKrIn/2xC0xwRE4el8=
+			cK8fgjNNb3oNYOtBN2cpjS85Dbo=
 			</data>
 			<key>hash2</key>
 			<data>
-			l8CiojBtFOpM38XgY5DA840npJSJHnzGlBVmOcEGYJ8=
-			</data>
-		</dict>
-		<key>Headers/WhiteboardControllerDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6ayyy9nkfvW3uHC7eq5sxI9wjpU=
-			</data>
-			<key>hash2</key>
-			<data>
-			3ZEEwN/s/HoQ6B8HOwxto/tXHQOzHsjDNqW+s2OYLG0=
+			XP2jRwNIBJvrcYZ3pGt+GPYJ4Abh3iqchQeLyulGq8c=
 			</data>
 		</dict>
 		<key>Headers/WhiteboardDefine.h</key>
@@ -438,33 +300,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6P2Tl9Da1/A7eNQe8AHLobil2M4=
+			URFhF49tR8hizg6X92NvDmgwQao=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z5gVFV/SBfczjEXN7xUwrQ5AM5pKa7hRL41na8rJnMQ=
+			ZH6x9tvilbh6aWA1AA1cdmsiJ++jnXcWNVNpWh36AFk=
 			</data>
 		</dict>
 		<key>Headers/WhiteboardUIDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uJ/Yq5EcdQ4K1Kk3g8bcS9IZK7w=
+			5z5iy6vBJC7pbE6GXnovmyycaVg=
 			</data>
 			<key>hash2</key>
 			<data>
-			H3oBJCRlR88N7UCxZ2P9NoRyprOpblOIjyUWmusyw+Y=
+			nIU3SgHSM7uCjPAW9+2dLU5mAFHXZ7arsI5Fa2U3S1U=
 			</data>
 		</dict>
 		<key>Headers/WhiteboardView.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XY/ESvfTJH5oqtCorIeRN4V182c=
+			VEi97XHbTgToRSy+i2HjvMp7/10=
 			</data>
 			<key>hash2</key>
 			<data>
-			6Ef3Dgg8AEBBALxtDLXrezJLvIaNxZolqwjH/rjqyzg=
+			vnoiAj9J/nnL5aiMkDFSd9tCdl5fsyHkhn5WRMlYLvY=
 			</data>
 		</dict>
 		<key>Headers/whiteboard_sdk.h</key>
@@ -489,48 +351,81 @@
 			iJ3SzIniBJNQXPp2zHx7u8txOCTCOU62wu/j/Z70xIY=
 			</data>
 		</dict>
+		<key>ResourceViewController.nib/objects-11.0+.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EDvamAbtytZe9bsG25YrjgVY65U=
+			</data>
+			<key>hash2</key>
+			<data>
+			Cq9EasQbbYvUrDQzGLSKxaFydQNGt3GxGQnVgtcjhZ4=
+			</data>
+		</dict>
+		<key>ResourceViewController.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6tVPz7cmWwp3//AiFnPSCTdzxMM=
+			</data>
+			<key>hash2</key>
+			<data>
+			rdQMMMJambIOAks/s+5wpw9ff9WaQoufOqWlldod3q4=
+			</data>
+		</dict>
+		<key>WBPageListView.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ErVHYskhL/02AE0/oZKDUW0tmAM=
+			</data>
+			<key>hash2</key>
+			<data>
+			O91cE3btRSusk5uMtBB1q/bFIuhXQ4udqZEUwBBC7ok=
+			</data>
+		</dict>
 		<key>WhiteboardMenuBar.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8Yt7WBniOz4IcCXlo3iD58lc58Q=
+			xCONVtbapwvI17G6S3ZMX5rNW44=
 			</data>
 			<key>hash2</key>
 			<data>
-			mxoyx0E16cxWuUscdT3Ci1BJ06iRRugc7/uheTcKnEY=
+			SLK58ZhTKpsZ1jz6cgvMWgl7i6ElFzXOe49hXF1Y/IE=
 			</data>
 		</dict>
 		<key>WhiteboardMenuBar.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DmjZUTEaYksyp0MOutzak/5mVpo=
+			ycNp8JxEzz8OB3zLqgBMPeBcjFQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			98Gq/FDmUo6KzzqjikorEtvL+Yf7i5nfC2aAb/iTT+Y=
+			37U8BK2H5uTXClwhLdoMxz7omdH2BQbM+QOD+jK7xCs=
 			</data>
 		</dict>
 		<key>WhiteboardPageControl.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lrOMOXwIOQuNq+UBOFFfzTiGS+o=
+			fP59PlP56pv8DKz2zegZLBIqHQM=
 			</data>
 			<key>hash2</key>
 			<data>
-			u/c6ilzg5a1MaLc09GtpN9lrnwXbzunwq1OFnImzdwk=
+			2mZ2yjIypdfSAzkNQ9GHh6hjLAlAarc3YV55o1JYvnE=
 			</data>
 		</dict>
 		<key>WhiteboardPageControl.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oY2YZIGOrI4MiZigw69AA4riyPw=
+			P/mBgPdGTa7/akPi42rDBJG0l1I=
 			</data>
 			<key>hash2</key>
 			<data>
-			R3YyiGcxcb7oyVG+/aa7ycqOWUKg+TCJmMiDTK/ahgA=
+			2XXRnSHyXcnOvdl1rHtDnAVt3irnIpOv7m1SfnSUu8k=
 			</data>
 		</dict>
 		<key>loadingAnimation.json</key>

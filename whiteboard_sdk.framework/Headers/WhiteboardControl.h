@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Constant.h"
 #import "WBRoom.h"
 #import "WBInputConfig.h"
 #import "WBJoinInfo.h"
@@ -15,15 +16,12 @@
 #import "WBActiveWidgetInfo.h"
 #import "WhiteboardDelegate.h"
 #import "WBScreenShotsDelegate.h"
-#import "WhiteboardControllerDelegate.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class WhiteboardView;
 @interface WhiteboardControl : NSObject
-
-@property (nonatomic,weak) id<WhiteboardControllerDelegate> delegte;
 
 /**
  *当前加入的房间信息
@@ -238,7 +236,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  
  */
--(void)insertImageFromCamera:(CGRect)rect_;
+-(void)insertImage:(NSString *)path_ rect:(CGRect)rect_;
 
 -(void)insertImageFromAlbum:(CGRect)rect_;
 /**
@@ -248,7 +246,7 @@ NS_ASSUME_NONNULL_BEGIN
      *
      * @implNote 仅在房间加入成功后有效，会同时触发{@link WhiteBoardListener#onWidgetActionEvent(WidgetActionEvent)}
 */
--(void)insertFile:(CGRect)frame_;
+-(void)insertFile:(NSString *)path_ rect:(CGRect)frame_;
 
 /**
      * 文件翻页
@@ -372,11 +370,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(int)getMaxPageNumber;
-#pragma mark NativeDelegate
-
--(void)onImagePicked:(UIImage *)image_ rect:(CGRect)rect_;
-
--(void)onFilePicked:(NSString *)url rect:(CGRect)rect_;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(instancetype)initFromDictonary:(NSDictionary *)params_;
+
+-(NSString *)getThumbnailUrl;
 @end
 
 NS_ASSUME_NONNULL_END

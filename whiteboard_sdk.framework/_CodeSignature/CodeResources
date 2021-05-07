@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		Ng2lnf1v+X2sIaHJ+NatsGInSTs=
+		</data>
 		<key>Assets.car</key>
 		<data>
-		hSgvUUcFSxJbXuz4YvgHTx8a6Sw=
+		z7REs3t9QP47pfD8EP6o16F+gU8=
 		</data>
 		<key>Headers/Constant.h</key>
 		<data>
@@ -38,7 +42,7 @@
 		</data>
 		<key>Headers/WBPageInfo.h</key>
 		<data>
-		IucvEPTBAjiVuSnZlg2yxwSbtjA=
+		1V0ew7hGS1NDtvaPn/joiGtsdQM=
 		</data>
 		<key>Headers/WBRoom.h</key>
 		<data>
@@ -56,9 +60,13 @@
 		<data>
 		CWWIH2LivIQCWscITzqHiLl86oY=
 		</data>
+		<key>Headers/WhiteboardConfig.h</key>
+		<data>
+		/o4XWgvrYuX/aRuTdc3OY0gflSI=
+		</data>
 		<key>Headers/WhiteboardControl.h</key>
 		<data>
-		cK8fgjNNb3oNYOtBN2cpjS85Dbo=
+		gHI996gK+SetoHLI5Eqx5EYMpww=
 		</data>
 		<key>Headers/WhiteboardDefine.h</key>
 		<data>
@@ -70,11 +78,11 @@
 		</data>
 		<key>Headers/WhiteboardUIDelegate.h</key>
 		<data>
-		5z5iy6vBJC7pbE6GXnovmyycaVg=
+		zudLIsC++j1fVpC9yAzTZJqfx4s=
 		</data>
 		<key>Headers/WhiteboardView.h</key>
 		<data>
-		VEi97XHbTgToRSy+i2HjvMp7/10=
+		T3pQj5vsVvUvTrJ4hLgaFEhFyrk=
 		</data>
 		<key>Headers/whiteboard_sdk.h</key>
 		<data>
@@ -90,31 +98,39 @@
 		</data>
 		<key>ResourceViewController.nib/objects-11.0+.nib</key>
 		<data>
-		EDvamAbtytZe9bsG25YrjgVY65U=
+		knnULomXiYmkIUr16WFigog8Rgk=
 		</data>
 		<key>ResourceViewController.nib/runtime.nib</key>
 		<data>
-		6tVPz7cmWwp3//AiFnPSCTdzxMM=
+		ojPVLwARbFn20hpJFyUJ5K0f1yw=
+		</data>
+		<key>WBPageCellHeader.nib</key>
+		<data>
+		7vkQ3GadTNsLgei3KKOFdxfJN4k=
+		</data>
+		<key>WBPageInfoCell.nib</key>
+		<data>
+		m3QdYvXwlY3jB88vKu4GmY0IuCI=
 		</data>
 		<key>WBPageListView.nib</key>
 		<data>
-		ErVHYskhL/02AE0/oZKDUW0tmAM=
+		mPb9+4oBEy4nszAqg4q4l0eocyg=
 		</data>
 		<key>WhiteboardMenuBar.nib/objects-11.0+.nib</key>
 		<data>
-		xCONVtbapwvI17G6S3ZMX5rNW44=
+		o8N+bKqZ0uJzbESq74O66sN1G+Q=
 		</data>
 		<key>WhiteboardMenuBar.nib/runtime.nib</key>
 		<data>
-		ycNp8JxEzz8OB3zLqgBMPeBcjFQ=
+		ifw1XHCb9dyr5YHddCBJOOY94dE=
 		</data>
 		<key>WhiteboardPageControl.nib/objects-11.0+.nib</key>
 		<data>
-		fP59PlP56pv8DKz2zegZLBIqHQM=
+		PsUHt5RZk5PJnq/+BGMa8tNtjIM=
 		</data>
 		<key>WhiteboardPageControl.nib/runtime.nib</key>
 		<data>
-		P/mBgPdGTa7/akPi42rDBJG0l1I=
+		Vq91E1OZL42u2wRcNMliyuDsp0s=
 		</data>
 		<key>loadingAnimation.json</key>
 		<data>
@@ -135,11 +151,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hSgvUUcFSxJbXuz4YvgHTx8a6Sw=
+			z7REs3t9QP47pfD8EP6o16F+gU8=
 			</data>
 			<key>hash2</key>
 			<data>
-			2LSJ3udORXn7IEu4blHdxDsRdYpYtM3vhXLEnUKWls4=
+			HLgTMJnBJ001/+M7/sK51kRy4FyNJ2mrawWc6Vc9/fE=
 			</data>
 		</dict>
 		<key>Headers/Constant.h</key>
@@ -223,11 +239,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IucvEPTBAjiVuSnZlg2yxwSbtjA=
+			1V0ew7hGS1NDtvaPn/joiGtsdQM=
 			</data>
 			<key>hash2</key>
 			<data>
-			cIzNI4vW7qjeLqQWQ/GBtCLoSWsjOdvhLOQ1p7vHZDM=
+			aMO4i0vTxVKgenzrqGuTbYvTjd879yQgCon2kJVw35g=
 			</data>
 		</dict>
 		<key>Headers/WBRoom.h</key>
@@ -274,15 +290,26 @@
 			mGeD35HehVipDt8RJJu2Nj9T5tn6UzwgxSZ6FHs+Y1k=
 			</data>
 		</dict>
+		<key>Headers/WhiteboardConfig.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/o4XWgvrYuX/aRuTdc3OY0gflSI=
+			</data>
+			<key>hash2</key>
+			<data>
+			yn/CO7KhPWNIt3SI/xgyWBsfogNM+uTSJSrM/UgYuU8=
+			</data>
+		</dict>
 		<key>Headers/WhiteboardControl.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cK8fgjNNb3oNYOtBN2cpjS85Dbo=
+			gHI996gK+SetoHLI5Eqx5EYMpww=
 			</data>
 			<key>hash2</key>
 			<data>
-			XP2jRwNIBJvrcYZ3pGt+GPYJ4Abh3iqchQeLyulGq8c=
+			qWvIvCWOwogVqlTckQPZG8gDN+OJYIDvNcDoRW3mc4g=
 			</data>
 		</dict>
 		<key>Headers/WhiteboardDefine.h</key>
@@ -311,22 +338,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5z5iy6vBJC7pbE6GXnovmyycaVg=
+			zudLIsC++j1fVpC9yAzTZJqfx4s=
 			</data>
 			<key>hash2</key>
 			<data>
-			nIU3SgHSM7uCjPAW9+2dLU5mAFHXZ7arsI5Fa2U3S1U=
+			FcnaB9vX4Ka7hdCdXP8ESXlPikt5ceoKC3Fz0mQn2/0=
 			</data>
 		</dict>
 		<key>Headers/WhiteboardView.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VEi97XHbTgToRSy+i2HjvMp7/10=
+			T3pQj5vsVvUvTrJ4hLgaFEhFyrk=
 			</data>
 			<key>hash2</key>
 			<data>
-			vnoiAj9J/nnL5aiMkDFSd9tCdl5fsyHkhn5WRMlYLvY=
+			PxYyhiX+MhVFDexaS+Un39Vq37GIYaHkGcVGqim/e+A=
 			</data>
 		</dict>
 		<key>Headers/whiteboard_sdk.h</key>
@@ -355,77 +382,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EDvamAbtytZe9bsG25YrjgVY65U=
+			knnULomXiYmkIUr16WFigog8Rgk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cq9EasQbbYvUrDQzGLSKxaFydQNGt3GxGQnVgtcjhZ4=
+			G/EVxw5/t8DGvYHJ5DT/JFcJZacGyXACXSKF8Iq8Lhg=
 			</data>
 		</dict>
 		<key>ResourceViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6tVPz7cmWwp3//AiFnPSCTdzxMM=
+			ojPVLwARbFn20hpJFyUJ5K0f1yw=
 			</data>
 			<key>hash2</key>
 			<data>
-			rdQMMMJambIOAks/s+5wpw9ff9WaQoufOqWlldod3q4=
+			KgwTgsHCpV559HjRh8stc3OAbpCz0x+Ag/oZNdaR9C4=
+			</data>
+		</dict>
+		<key>WBPageCellHeader.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7vkQ3GadTNsLgei3KKOFdxfJN4k=
+			</data>
+			<key>hash2</key>
+			<data>
+			LwWq2YBDJ66E5ijGrQbWnQgbN2pYaCGqesPTtbEMdC0=
+			</data>
+		</dict>
+		<key>WBPageInfoCell.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			m3QdYvXwlY3jB88vKu4GmY0IuCI=
+			</data>
+			<key>hash2</key>
+			<data>
+			cpIIJvHwvZT3GKYPvShNaJGDIfSMekUgxUof/tcZXxg=
 			</data>
 		</dict>
 		<key>WBPageListView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ErVHYskhL/02AE0/oZKDUW0tmAM=
+			mPb9+4oBEy4nszAqg4q4l0eocyg=
 			</data>
 			<key>hash2</key>
 			<data>
-			O91cE3btRSusk5uMtBB1q/bFIuhXQ4udqZEUwBBC7ok=
+			rTufh0EYKLtqsqmA7z+WDQQEbhTAKXRwqTXlxP2fTfA=
 			</data>
 		</dict>
 		<key>WhiteboardMenuBar.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xCONVtbapwvI17G6S3ZMX5rNW44=
+			o8N+bKqZ0uJzbESq74O66sN1G+Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			SLK58ZhTKpsZ1jz6cgvMWgl7i6ElFzXOe49hXF1Y/IE=
+			BJgp/DugOtHVrJmavZJKNjC4RIrg/Mvvv6BB7IF/aIw=
 			</data>
 		</dict>
 		<key>WhiteboardMenuBar.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ycNp8JxEzz8OB3zLqgBMPeBcjFQ=
+			ifw1XHCb9dyr5YHddCBJOOY94dE=
 			</data>
 			<key>hash2</key>
 			<data>
-			37U8BK2H5uTXClwhLdoMxz7omdH2BQbM+QOD+jK7xCs=
+			rP4XFMTWPsdrwTRA0CUyJOsSoa6we/LyBRsSPGwRB88=
 			</data>
 		</dict>
 		<key>WhiteboardPageControl.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fP59PlP56pv8DKz2zegZLBIqHQM=
+			PsUHt5RZk5PJnq/+BGMa8tNtjIM=
 			</data>
 			<key>hash2</key>
 			<data>
-			2mZ2yjIypdfSAzkNQ9GHh6hjLAlAarc3YV55o1JYvnE=
+			1sg3hhT+i5OT+nFhKDs+Ada1a1TzU7/fNKCtZBinmps=
 			</data>
 		</dict>
 		<key>WhiteboardPageControl.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			P/mBgPdGTa7/akPi42rDBJG0l1I=
+			Vq91E1OZL42u2wRcNMliyuDsp0s=
 			</data>
 			<key>hash2</key>
 			<data>
-			2XXRnSHyXcnOvdl1rHtDnAVt3irnIpOv7m1SfnSUu8k=
+			bwkkfBU0sbAcq0nbkqQ5FhIiNiis4pMP69PPE1zw3Vc=
 			</data>
 		</dict>
 		<key>loadingAnimation.json</key>

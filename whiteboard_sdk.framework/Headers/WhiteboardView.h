@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WhiteboardView : GLKViewController <GLKViewControllerDelegate,UIImagePickerControllerDelegate,WhiteboardDelegate,UIDocumentPickerDelegate,WhiteboardUIDelegate>
 
-@property(atomic,retain,readonly) WhiteboardControl * control;
-
 -(bool)initRender:(CGSize)size;
 
 -(void)setDirty;

@@ -5,6 +5,7 @@ target 'DemoProject' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'SDWebImage', '~> 5.0'
   pod 'AFNetworking', '~> 4.0'
   pod 'AliyunOSSiOS'
   # Pods for DemoProject

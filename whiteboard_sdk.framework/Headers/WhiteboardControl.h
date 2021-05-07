@@ -15,7 +15,9 @@
 #import "WBPageInfo.h"
 #import "WBActiveWidgetInfo.h"
 #import "WhiteboardDelegate.h"
+#import "WhiteboardUIDelegate.h"
 #import "WBScreenShotsDelegate.h"
+#import "WhiteboardConfig.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -33,10 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,retain,readonly) WBRoomMember * me;
 
+@property (nonatomic,readonly) WhiteboardConfig * config;
 /**
  *当前白板的输入状态
  */
 @property (nonatomic,assign,readonly) WBInputConfig * inputConfig;
+
+@property (nonatomic,weak) id<WhiteboardUIDelegate> uiDelegate;
 
 +(instancetype)instance;
 
@@ -119,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)updateScreen;
 
 
--(void)screenShots:(id<WBScreenShotsDelegate>)delegate_;
+-(void)screenShots:(id<WBScreenShotsDelegate>)delegate_ image:(UIImage *)thumbnail;
 /**
  * 设置白板断线自动重连次数，默认为10次，设为0表示不自动重连
  *
@@ -230,6 +235,14 @@ NS_ASSUME_NONNULL_BEGIN
 */
 -(void)deleteBoardPage:(NSString *)pageId_;
 
+
+/**
+ 生成并且上传thumbail
+ 必须在主线程下执行
+ 
+ 
+ */
+-(void)updateThumbnailForPageId:(NSString *)pageId_ image:(NSString *)imagePath;
 /**
  
  
@@ -312,7 +325,7 @@ NS_ASSUME_NONNULL_BEGIN
      */
 -(NSArray<WBPageInfo *> *)getPageList;
 
-
+-(WBPageInfo *)getPageByIndex:(NSInteger)index_;
 /**
  * 获取当前白板页信息
  *

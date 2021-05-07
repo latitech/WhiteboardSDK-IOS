@@ -42,7 +42,7 @@
 {
     WBJoinInfo * joinInfo = [[WBJoinInfo alloc] initWithParam:appId room:roomId user:userId  token:token];
     WBRoomMember * member = [[WBRoomMember alloc] initWithParams:userId session:NULL role:6 name:NULL avatar:NULL];
-    [self.control joinRoom:joinInfo member:member];
+    [[WhiteboardControl instance] joinRoom:joinInfo member:member];
 }
                      
                      

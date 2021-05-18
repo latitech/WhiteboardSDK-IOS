@@ -6,7 +6,6 @@ target 'DemoProject' do
   use_frameworks!
 
   pod 'SDWebImage', '~> 5.0'
-  pod 'AFNetworking', '~> 4.0'
   # Pods for DemoProject
 
 end

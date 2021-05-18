@@ -7,7 +7,6 @@ target 'DemoProject' do
 
   pod 'SDWebImage', '~> 5.0'
   pod 'AFNetworking', '~> 4.0'
-  pod 'AliyunOSSiOS'
   # Pods for DemoProject
 
 end

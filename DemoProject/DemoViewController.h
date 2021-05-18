@@ -6,10 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Whiteboard_sdk/WhiteboardView.h"
+#import <LATWhiteboard/LATWhiteboard.h>
 
 
-@interface DemoViewController : WhiteboardView <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface DemoViewController : LATWhiteboardViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 
 -(void)initConnectionInfo:(NSString *)appId_ roomId:(NSString *)roomId_ userId:(NSString *)userId_ token:(NSString *)token_;

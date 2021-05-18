@@ -1,0 +1,6 @@
+framework module LATWhiteboard {
+  umbrella header "LATWhiteboard.h"
+
+  export *
+  module * { export * }
+}

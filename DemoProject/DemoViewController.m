@@ -7,6 +7,12 @@
 
 #import "DemoViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "LATSelectResourceView/LATSelectResourceViewController.h"
+#import "LATPageControl/LATPageControl.h"
+#import "LATPageThumbnailsView/LATPageListView.h"
+#import "LATWidgetMenu/LATFloatingMenu.h"
+#import "LATToolbar/LATExpandableToolbar.h"
+
 
 
 
@@ -17,6 +23,11 @@
     NSString * roomId;
     NSString * userId;
     NSString * token;
+    UICollectionViewController * menuBar;
+    LATPageControl * pageControl;
+    LATFloatingMenu * floatingMenu;
+    LATPageListView * pageListView;
+    LATExpandableToolbar * toolbar;
 }
 @end
 
@@ -24,25 +35,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSBundle * bundle = [NSBundle mainBundle];
     
-//    UIStoryboard * board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    TestViewController * testVC = [board instantiateViewControllerWithIdentifier:@"TestViewId"];
-//
-//    testVC.control = self.control;
-//    [self addChildViewController:testVC];
-//    testVC.view.frame = CGRectMake(10, 40, 36*7, 32);
-//    [self.view addSubview:testVC.view];
-//    [testVC didMoveToParentViewController:self];
     
+    
+    //添加退出按钮
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 64, 64)];
+    [button setImage:[UIImage imageNamed:@"logout" inBundle:[NSBundle bundleForClass:[LATWhiteboardControl class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [button setTintColor:UIColor.blackColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(onBackPressed) forControlEvents:UIControlEventTouchDown];
+    
+    //添加工具栏
+    toolbar = [[LATExpandableToolbar alloc] init];
+    [self.view addSubview:toolbar];
+    [toolbar addConstraintToParent:self.view];
+    
+    //添加页导航
+    pageControl = [[UINib nibWithNibName:@"LATPageControl" bundle:bundle] instantiateWithOwner:nil options:nil].firstObject;
+    
+    pageControl.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:pageControl];
+    [pageControl layoutMenu:self.view];
+    
+    pageControl.uiDelegate = self;
+    
+    //添加widget菜单
+    floatingMenu = [[LATFloatingMenu alloc] init];
+    floatingMenu.delegate = self;
+   
+    [self.view addSubview:floatingMenu];
+    [floatingMenu layoutMenu:self.view];
+    
+    
+    //进入房间
     [self joinRoom];
+}
+
+
+-(void)onBackPressed
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)joinRoom
 {
-    WBJoinInfo * joinInfo = [[WBJoinInfo alloc] initWithParam:appId room:roomId user:userId  token:token];
-    WBRoomMember * member = [[WBRoomMember alloc] initWithParams:userId session:NULL role:6 name:NULL avatar:NULL];
-    [[WhiteboardControl instance] joinRoom:joinInfo member:member];
+    LATJoinInfo * joinInfo = [[LATJoinInfo alloc] initWithParam:appId room:roomId user:userId  token:token];
+    LATRoomMember * member = [[LATRoomMember alloc] initWithParams:userId session:nil role:6 name:nil avatar:nil];
+    [[LATWhiteboardControl instance] joinRoom:joinInfo member:member];
 }
                      
                      

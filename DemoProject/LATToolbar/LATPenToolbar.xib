@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LATPenToolbar"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" id="8hC-hH-jwP" customClass="LATPenToolbar">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <items>
+                <barButtonItem title="hide" image="hideIcoin" id="672-GV-EDp">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="select" image="selectIcon" style="plain" id="Zfs-cD-k8b">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="pen" image="PenIcon" id="5HS-E9-vIG">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="eraser" image="eraseIcon" id="e3M-FC-qKK">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="geometry" image="geometryIcon" id="tvM-iQ-BM4">
+                    <inset key="imageInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="laser" image="laserIcon" id="f0j-EC-M1f">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="file" image="fileIcon" id="E7T-1l-twG">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="file" image="fileIcon" id="u6Q-QC-qdL">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="file" image="fileIcon" id="v14-jK-Gq4">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+                <barButtonItem title="file" image="fileIcon" id="eEv-a3-w4S">
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </barButtonItem>
+            </items>
+            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="132" y="-133"/>
+        </toolbar>
+    </objects>
+    <resources>
+        <image name="PenIcon" width="32" height="32"/>
+        <image name="eraseIcon" width="32" height="32"/>
+        <image name="fileIcon" width="32" height="32"/>
+        <image name="geometryIcon" width="32" height="32"/>
+        <image name="hideIcoin" width="32" height="32"/>
+        <image name="laserIcon" width="32" height="32"/>
+        <image name="selectIcon" width="32" height="32"/>
+    </resources>
+</document>

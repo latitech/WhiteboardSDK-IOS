@@ -8,13 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A9674C1B54F8A28BA8EC206D /* Pods_DemoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA992D16E8941554DD4BA6E /* Pods_DemoProject.framework */; };
-		D6856514263AAFE300B48656 /* chatboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6856512263AAFDB00B48656 /* chatboard.framework */; };
-		D6856515263AAFE300B48656 /* chatboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6856512263AAFDB00B48656 /* chatboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D6BDB26926396A8D00C28ABD /* whiteboard_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BDB26726396A8000C28ABD /* whiteboard_sdk.framework */; };
-		D6BDB26A26396A8D00C28ABD /* whiteboard_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6BDB26726396A8000C28ABD /* whiteboard_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D6CE6DFC26390B3100C476C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6DFB26390B3100C476C6 /* AppDelegate.m */; };
 		D6CE6DFF26390B3100C476C6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6DFE26390B3100C476C6 /* SceneDelegate.m */; };
-		D6CE6E0226390B3100C476C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6E0126390B3100C476C6 /* ViewController.m */; };
 		D6CE6E0526390B3100C476C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6CE6E0326390B3100C476C6 /* Main.storyboard */; };
 		D6CE6E0726390B3200C476C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CE6E0626390B3200C476C6 /* Assets.xcassets */; };
 		D6CE6E0A26390B3200C476C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6CE6E0826390B3200C476C6 /* LaunchScreen.storyboard */; };
@@ -22,6 +17,35 @@
 		D6CE6E4F26391C5C00C476C6 /* TestNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6E4A26391C5B00C476C6 /* TestNavigatorController.m */; };
 		D6CE6E5026391C5C00C476C6 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6E4B26391C5B00C476C6 /* DemoViewController.m */; };
 		D6CE6E5126391C5C00C476C6 /* TestNavigatorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE6E4D26391C5B00C476C6 /* TestNavigatorController.xib */; };
+		D6CFA0C926535018003B2049 /* LATFloatingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA09F26535018003B2049 /* LATFloatingMenu.m */; };
+		D6CFA0CA26535018003B2049 /* LATLaserToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0A226535018003B2049 /* LATLaserToolbar.m */; };
+		D6CFA0CB26535018003B2049 /* LATExpandableToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0A526535018003B2049 /* LATExpandableToolbar.m */; };
+		D6CFA0CC26535018003B2049 /* LATEraseToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0A626535018003B2049 /* LATEraseToolbar.m */; };
+		D6CFA0CD26535018003B2049 /* LATPenToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0A826535018003B2049 /* LATPenToolbar.xib */; };
+		D6CFA0CE26535018003B2049 /* LATPenToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0A926535018003B2049 /* LATPenToolbar.m */; };
+		D6CFA0CF26535018003B2049 /* LATGeometryToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0AA26535018003B2049 /* LATGeometryToolbar.m */; };
+		D6CFA0D026535018003B2049 /* LATPrimaryToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0AD26535018003B2049 /* LATPrimaryToolbar.xib */; };
+		D6CFA0D126535018003B2049 /* LATGeometryToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0AE26535018003B2049 /* LATGeometryToolbar.xib */; };
+		D6CFA0D226535018003B2049 /* LATEraseToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0AF26535018003B2049 /* LATEraseToolbar.xib */; };
+		D6CFA0D326535018003B2049 /* LATLaserToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0B026535018003B2049 /* LATLaserToolbar.xib */; };
+		D6CFA0D426535018003B2049 /* LATPrimaryToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0B126535018003B2049 /* LATPrimaryToolbar.m */; };
+		D6CFA0D526535018003B2049 /* LATPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0B426535018003B2049 /* LATPageControl.m */; };
+		D6CFA0D626535018003B2049 /* LATPageControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0B626535018003B2049 /* LATPageControl.xib */; };
+		D6CFA0D726535018003B2049 /* LATPageCellHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0B826535018003B2049 /* LATPageCellHeader.m */; };
+		D6CFA0D826535018003B2049 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0B926535018003B2049 /* TableViewCell.m */; };
+		D6CFA0D926535018003B2049 /* LATPageListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0BA26535018003B2049 /* LATPageListView.m */; };
+		D6CFA0DA26535018003B2049 /* LATPageInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0BC26535018003B2049 /* LATPageInfoCell.xib */; };
+		D6CFA0DB26535018003B2049 /* LATPageListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0BD26535018003B2049 /* LATPageListView.xib */; };
+		D6CFA0DC26535018003B2049 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0BE26535018003B2049 /* TableViewCell.xib */; };
+		D6CFA0DD26535018003B2049 /* LATPageInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0C226535018003B2049 /* LATPageInfoCell.m */; };
+		D6CFA0DE26535018003B2049 /* LATPageCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0C326535018003B2049 /* LATPageCellHeader.xib */; };
+		D6CFA0DF26535018003B2049 /* LATSelecetResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0C526535018003B2049 /* LATSelecetResourceViewController.xib */; };
+		D6CFA0E026535018003B2049 /* LATSelectResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0C626535018003B2049 /* LATSelectResourceViewController.m */; };
+		D6CFA0E126535018003B2049 /* thunder_4.0.1.14502.dmg in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0C726535018003B2049 /* thunder_4.0.1.14502.dmg */; };
+		D6CFA0E7265350E9003B2049 /* chatboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA0E32653506B003B2049 /* chatboard.framework */; };
+		D6CFA0E8265350E9003B2049 /* chatboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA0E32653506B003B2049 /* chatboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D6CFA0E9265350EB003B2049 /* LATWhiteboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA0E526535082003B2049 /* LATWhiteboard.framework */; };
+		D6CFA0EA265350EB003B2049 /* LATWhiteboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA0E526535082003B2049 /* LATWhiteboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,8 +55,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D6BDB26A26396A8D00C28ABD /* whiteboard_sdk.framework in Embed Frameworks */,
-				D6856515263AAFE300B48656 /* chatboard.framework in Embed Frameworks */,
+				D6CFA0E8265350E9003B2049 /* chatboard.framework in Embed Frameworks */,
+				D6CFA0EA265350EB003B2049 /* LATWhiteboard.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,15 +67,11 @@
 		020449DFD0879B54A74A8284 /* Pods-DemoProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProject.debug.xcconfig"; path = "Target Support Files/Pods-DemoProject/Pods-DemoProject.debug.xcconfig"; sourceTree = "<group>"; };
 		64CE1BA769886A34442556EC /* Pods-DemoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProject.release.xcconfig"; path = "Target Support Files/Pods-DemoProject/Pods-DemoProject.release.xcconfig"; sourceTree = "<group>"; };
 		BEA992D16E8941554DD4BA6E /* Pods_DemoProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6856512263AAFDB00B48656 /* chatboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = chatboard.framework; sourceTree = "<group>"; };
-		D6BDB26726396A8000C28ABD /* whiteboard_sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = whiteboard_sdk.framework; sourceTree = "<group>"; };
 		D6CE6DF726390B3100C476C6 /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CE6DFA26390B3100C476C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6CE6DFB26390B3100C476C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D6CE6DFD26390B3100C476C6 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		D6CE6DFE26390B3100C476C6 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		D6CE6E0026390B3100C476C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D6CE6E0126390B3100C476C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D6CE6E0426390B3100C476C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6CE6E0626390B3200C476C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6CE6E0926390B3200C476C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +82,46 @@
 		D6CE6E4C26391C5B00C476C6 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		D6CE6E4D26391C5B00C476C6 /* TestNavigatorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestNavigatorController.xib; sourceTree = "<group>"; };
 		D6CE6E4E26391C5C00C476C6 /* TestNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNavigatorController.h; sourceTree = "<group>"; };
+		D6CFA09F26535018003B2049 /* LATFloatingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATFloatingMenu.m; sourceTree = "<group>"; };
+		D6CFA0A026535018003B2049 /* LATFloatingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATFloatingMenu.h; sourceTree = "<group>"; };
+		D6CFA0A226535018003B2049 /* LATLaserToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATLaserToolbar.m; sourceTree = "<group>"; };
+		D6CFA0A326535018003B2049 /* LATGeometryToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATGeometryToolbar.h; sourceTree = "<group>"; };
+		D6CFA0A426535018003B2049 /* LATPenToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATPenToolbar.h; sourceTree = "<group>"; };
+		D6CFA0A526535018003B2049 /* LATExpandableToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATExpandableToolbar.m; sourceTree = "<group>"; };
+		D6CFA0A626535018003B2049 /* LATEraseToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATEraseToolbar.m; sourceTree = "<group>"; };
+		D6CFA0A726535018003B2049 /* LATPrimaryToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATPrimaryToolbar.h; sourceTree = "<group>"; };
+		D6CFA0A826535018003B2049 /* LATPenToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATPenToolbar.xib; sourceTree = "<group>"; };
+		D6CFA0A926535018003B2049 /* LATPenToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATPenToolbar.m; sourceTree = "<group>"; };
+		D6CFA0AA26535018003B2049 /* LATGeometryToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATGeometryToolbar.m; sourceTree = "<group>"; };
+		D6CFA0AB26535018003B2049 /* LATLaserToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATLaserToolbar.h; sourceTree = "<group>"; };
+		D6CFA0AC26535018003B2049 /* LATExpandableToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATExpandableToolbar.h; sourceTree = "<group>"; };
+		D6CFA0AD26535018003B2049 /* LATPrimaryToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATPrimaryToolbar.xib; sourceTree = "<group>"; };
+		D6CFA0AE26535018003B2049 /* LATGeometryToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATGeometryToolbar.xib; sourceTree = "<group>"; };
+		D6CFA0AF26535018003B2049 /* LATEraseToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATEraseToolbar.xib; sourceTree = "<group>"; };
+		D6CFA0B026535018003B2049 /* LATLaserToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATLaserToolbar.xib; sourceTree = "<group>"; };
+		D6CFA0B126535018003B2049 /* LATPrimaryToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATPrimaryToolbar.m; sourceTree = "<group>"; };
+		D6CFA0B226535018003B2049 /* LATEraseToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATEraseToolbar.h; sourceTree = "<group>"; };
+		D6CFA0B426535018003B2049 /* LATPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATPageControl.m; sourceTree = "<group>"; };
+		D6CFA0B526535018003B2049 /* LATPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATPageControl.h; sourceTree = "<group>"; };
+		D6CFA0B626535018003B2049 /* LATPageControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATPageControl.xib; sourceTree = "<group>"; };
+		D6CFA0B826535018003B2049 /* LATPageCellHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATPageCellHeader.m; sourceTree = "<group>"; };
+		D6CFA0B926535018003B2049 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		D6CFA0BA26535018003B2049 /* LATPageListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATPageListView.m; sourceTree = "<group>"; };
+		D6CFA0BB26535018003B2049 /* LATPageInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATPageInfoCell.h; sourceTree = "<group>"; };
+		D6CFA0BC26535018003B2049 /* LATPageInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATPageInfoCell.xib; sourceTree = "<group>"; };
+		D6CFA0BD26535018003B2049 /* LATPageListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATPageListView.xib; sourceTree = "<group>"; };
+		D6CFA0BE26535018003B2049 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		D6CFA0BF26535018003B2049 /* LATPageCellHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATPageCellHeader.h; sourceTree = "<group>"; };
+		D6CFA0C026535018003B2049 /* LATPageListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATPageListView.h; sourceTree = "<group>"; };
+		D6CFA0C126535018003B2049 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		D6CFA0C226535018003B2049 /* LATPageInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATPageInfoCell.m; sourceTree = "<group>"; };
+		D6CFA0C326535018003B2049 /* LATPageCellHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATPageCellHeader.xib; sourceTree = "<group>"; };
+		D6CFA0C526535018003B2049 /* LATSelecetResourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LATSelecetResourceViewController.xib; sourceTree = "<group>"; };
+		D6CFA0C626535018003B2049 /* LATSelectResourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATSelectResourceViewController.m; sourceTree = "<group>"; };
+		D6CFA0C726535018003B2049 /* thunder_4.0.1.14502.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = thunder_4.0.1.14502.dmg; sourceTree = "<group>"; };
+		D6CFA0C826535018003B2049 /* LATSelectResourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATSelectResourceViewController.h; sourceTree = "<group>"; };
+		D6CFA0E32653506B003B2049 /* chatboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = chatboard.framework; path = DemoProject/chatboard.framework; sourceTree = "<group>"; };
+		D6CFA0E526535082003B2049 /* LATWhiteboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LATWhiteboard.framework; path = DemoProject/LATWhiteboard.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +129,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6BDB26926396A8D00C28ABD /* whiteboard_sdk.framework in Frameworks */,
+				D6CFA0E9265350EB003B2049 /* LATWhiteboard.framework in Frameworks */,
 				A9674C1B54F8A28BA8EC206D /* Pods_DemoProject.framework in Frameworks */,
-				D6856514263AAFE300B48656 /* chatboard.framework in Frameworks */,
+				D6CFA0E7265350E9003B2049 /* chatboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +168,11 @@
 		D6CE6DF926390B3100C476C6 /* DemoProject */ = {
 			isa = PBXGroup;
 			children = (
+				D6CFA0B326535018003B2049 /* LATPageControl */,
+				D6CFA0B726535018003B2049 /* LATPageThumbnailsView */,
+				D6CFA0C426535018003B2049 /* LATSelectResourceView */,
+				D6CFA0A126535018003B2049 /* LATToolbar */,
+				D6CFA09E26535018003B2049 /* LATWidgetMenu */,
 				D6CE6E4C26391C5B00C476C6 /* DemoViewController.h */,
 				D6CE6E4B26391C5B00C476C6 /* DemoViewController.m */,
 				D6CE6E4E26391C5C00C476C6 /* TestNavigatorController.h */,
@@ -117,8 +182,6 @@
 				D6CE6DFB26390B3100C476C6 /* AppDelegate.m */,
 				D6CE6DFD26390B3100C476C6 /* SceneDelegate.h */,
 				D6CE6DFE26390B3100C476C6 /* SceneDelegate.m */,
-				D6CE6E0026390B3100C476C6 /* ViewController.h */,
-				D6CE6E0126390B3100C476C6 /* ViewController.m */,
 				D6CE6E0326390B3100C476C6 /* Main.storyboard */,
 				D6CE6E0626390B3200C476C6 /* Assets.xcassets */,
 				D6CE6E0826390B3200C476C6 /* LaunchScreen.storyboard */,
@@ -131,11 +194,84 @@
 		D6CE6E1B26390D8000C476C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6856512263AAFDB00B48656 /* chatboard.framework */,
+				D6CFA0E526535082003B2049 /* LATWhiteboard.framework */,
+				D6CFA0E32653506B003B2049 /* chatboard.framework */,
 				BEA992D16E8941554DD4BA6E /* Pods_DemoProject.framework */,
-				D6BDB26726396A8000C28ABD /* whiteboard_sdk.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6CFA09E26535018003B2049 /* LATWidgetMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D6CFA09F26535018003B2049 /* LATFloatingMenu.m */,
+				D6CFA0A026535018003B2049 /* LATFloatingMenu.h */,
+			);
+			path = LATWidgetMenu;
+			sourceTree = "<group>";
+		};
+		D6CFA0A126535018003B2049 /* LATToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				D6CFA0A226535018003B2049 /* LATLaserToolbar.m */,
+				D6CFA0A326535018003B2049 /* LATGeometryToolbar.h */,
+				D6CFA0A426535018003B2049 /* LATPenToolbar.h */,
+				D6CFA0A526535018003B2049 /* LATExpandableToolbar.m */,
+				D6CFA0A626535018003B2049 /* LATEraseToolbar.m */,
+				D6CFA0A726535018003B2049 /* LATPrimaryToolbar.h */,
+				D6CFA0A826535018003B2049 /* LATPenToolbar.xib */,
+				D6CFA0A926535018003B2049 /* LATPenToolbar.m */,
+				D6CFA0AA26535018003B2049 /* LATGeometryToolbar.m */,
+				D6CFA0AB26535018003B2049 /* LATLaserToolbar.h */,
+				D6CFA0AC26535018003B2049 /* LATExpandableToolbar.h */,
+				D6CFA0AD26535018003B2049 /* LATPrimaryToolbar.xib */,
+				D6CFA0AE26535018003B2049 /* LATGeometryToolbar.xib */,
+				D6CFA0AF26535018003B2049 /* LATEraseToolbar.xib */,
+				D6CFA0B026535018003B2049 /* LATLaserToolbar.xib */,
+				D6CFA0B126535018003B2049 /* LATPrimaryToolbar.m */,
+				D6CFA0B226535018003B2049 /* LATEraseToolbar.h */,
+			);
+			path = LATToolbar;
+			sourceTree = "<group>";
+		};
+		D6CFA0B326535018003B2049 /* LATPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				D6CFA0B426535018003B2049 /* LATPageControl.m */,
+				D6CFA0B526535018003B2049 /* LATPageControl.h */,
+				D6CFA0B626535018003B2049 /* LATPageControl.xib */,
+			);
+			path = LATPageControl;
+			sourceTree = "<group>";
+		};
+		D6CFA0B726535018003B2049 /* LATPageThumbnailsView */ = {
+			isa = PBXGroup;
+			children = (
+				D6CFA0B826535018003B2049 /* LATPageCellHeader.m */,
+				D6CFA0B926535018003B2049 /* TableViewCell.m */,
+				D6CFA0BA26535018003B2049 /* LATPageListView.m */,
+				D6CFA0BB26535018003B2049 /* LATPageInfoCell.h */,
+				D6CFA0BC26535018003B2049 /* LATPageInfoCell.xib */,
+				D6CFA0BD26535018003B2049 /* LATPageListView.xib */,
+				D6CFA0BE26535018003B2049 /* TableViewCell.xib */,
+				D6CFA0BF26535018003B2049 /* LATPageCellHeader.h */,
+				D6CFA0C026535018003B2049 /* LATPageListView.h */,
+				D6CFA0C126535018003B2049 /* TableViewCell.h */,
+				D6CFA0C226535018003B2049 /* LATPageInfoCell.m */,
+				D6CFA0C326535018003B2049 /* LATPageCellHeader.xib */,
+			);
+			path = LATPageThumbnailsView;
+			sourceTree = "<group>";
+		};
+		D6CFA0C426535018003B2049 /* LATSelectResourceView */ = {
+			isa = PBXGroup;
+			children = (
+				D6CFA0C526535018003B2049 /* LATSelecetResourceViewController.xib */,
+				D6CFA0C626535018003B2049 /* LATSelectResourceViewController.m */,
+				D6CFA0C726535018003B2049 /* thunder_4.0.1.14502.dmg */,
+				D6CFA0C826535018003B2049 /* LATSelectResourceViewController.h */,
+			);
+			path = LATSelectResourceView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,9 +333,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6CFA0D626535018003B2049 /* LATPageControl.xib in Resources */,
+				D6CFA0E126535018003B2049 /* thunder_4.0.1.14502.dmg in Resources */,
+				D6CFA0D226535018003B2049 /* LATEraseToolbar.xib in Resources */,
+				D6CFA0DF26535018003B2049 /* LATSelecetResourceViewController.xib in Resources */,
 				D6CE6E0A26390B3200C476C6 /* LaunchScreen.storyboard in Resources */,
+				D6CFA0DE26535018003B2049 /* LATPageCellHeader.xib in Resources */,
+				D6CFA0D126535018003B2049 /* LATGeometryToolbar.xib in Resources */,
+				D6CFA0DC26535018003B2049 /* TableViewCell.xib in Resources */,
 				D6CE6E0726390B3200C476C6 /* Assets.xcassets in Resources */,
+				D6CFA0DB26535018003B2049 /* LATPageListView.xib in Resources */,
+				D6CFA0D026535018003B2049 /* LATPrimaryToolbar.xib in Resources */,
 				D6CE6E0526390B3100C476C6 /* Main.storyboard in Resources */,
+				D6CFA0DA26535018003B2049 /* LATPageInfoCell.xib in Resources */,
+				D6CFA0D326535018003B2049 /* LATLaserToolbar.xib in Resources */,
+				D6CFA0CD26535018003B2049 /* LATPenToolbar.xib in Resources */,
 				D6CE6E5126391C5C00C476C6 /* TestNavigatorController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,12 +401,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6CE6E0226390B3100C476C6 /* ViewController.m in Sources */,
+				D6CFA0D926535018003B2049 /* LATPageListView.m in Sources */,
+				D6CFA0E026535018003B2049 /* LATSelectResourceViewController.m in Sources */,
+				D6CFA0DD26535018003B2049 /* LATPageInfoCell.m in Sources */,
+				D6CFA0C926535018003B2049 /* LATFloatingMenu.m in Sources */,
+				D6CFA0D426535018003B2049 /* LATPrimaryToolbar.m in Sources */,
 				D6CE6E4F26391C5C00C476C6 /* TestNavigatorController.m in Sources */,
+				D6CFA0CE26535018003B2049 /* LATPenToolbar.m in Sources */,
 				D6CE6DFC26390B3100C476C6 /* AppDelegate.m in Sources */,
+				D6CFA0CC26535018003B2049 /* LATEraseToolbar.m in Sources */,
 				D6CE6E5026391C5C00C476C6 /* DemoViewController.m in Sources */,
 				D6CE6E0D26390B3200C476C6 /* main.m in Sources */,
+				D6CFA0D726535018003B2049 /* LATPageCellHeader.m in Sources */,
+				D6CFA0CB26535018003B2049 /* LATExpandableToolbar.m in Sources */,
 				D6CE6DFF26390B3100C476C6 /* SceneDelegate.m in Sources */,
+				D6CFA0CA26535018003B2049 /* LATLaserToolbar.m in Sources */,
+				D6CFA0D826535018003B2049 /* TableViewCell.m in Sources */,
+				D6CFA0D526535018003B2049 /* LATPageControl.m in Sources */,
+				D6CFA0CF26535018003B2049 /* LATGeometryToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

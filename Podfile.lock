@@ -14,27 +14,23 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - AliyunOSSiOS (2.10.9)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
-  - AliyunOSSiOS
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
-    - AliyunOSSiOS
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  AliyunOSSiOS: 13173e9eaf05d3816315319876025de3028ea31d
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: 2b282739ebae389e9b5e45765cf8e4ff358f02d2
+PODFILE CHECKSUM: b64a716f982be1fc8ffb600911e70597ce5f98b2
 
 COCOAPODS: 1.10.1

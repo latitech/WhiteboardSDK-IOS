@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LASelectResourceViewController">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="ResourceViewController"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O1m-KC-E2d">
+                    <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" id="gKf-eG-Xd0">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <items>
+                                <navigationItem title="资源管理" id="kri-yz-zxc"/>
+                            </items>
+                        </navigationBar>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fB-jc-rgR">
+                            <rect key="frame" x="0.0" y="56" width="414" height="44"/>
+                            <items>
+                                <barButtonItem title="拍照上传" id="7rf-kl-aBG">
+                                    <connections>
+                                        <action selector="loadFromCamera:" destination="-1" id="Fgh-jk-nNQ"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem title="相册选择" id="jbS-QJ-Kq8">
+                                    <connections>
+                                        <action selector="loadFromAlbum:" destination="-1" id="a2i-Vu-Iea"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem title="从文件夹选择" id="8us-7t-YRf">
+                                    <connections>
+                                        <action selector="loadFromFile:" destination="-1" id="jww-bf-0VK"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="hCa-tr-ofl"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="O1m-KC-E2d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JKh-Il-mbf"/>
+                <constraint firstAttribute="trailing" secondItem="O1m-KC-E2d" secondAttribute="trailing" id="krh-9q-vix"/>
+                <constraint firstItem="O1m-KC-E2d" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ybL-ct-OXB"/>
+            </constraints>
+            <point key="canvasLocation" x="-23" y="72"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

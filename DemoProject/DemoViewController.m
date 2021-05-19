@@ -48,8 +48,11 @@
     
     //添加工具栏
     toolbar = [[LATExpandableToolbar alloc] init];
+    toolbar.uiDelegate = self;
     [self.view addSubview:toolbar];
+    
     [toolbar addConstraintToParent:self.view];
+    
     
     //添加页导航
     pageControl = [[UINib nibWithNibName:@"LATPageControl" bundle:bundle] instantiateWithOwner:nil options:nil].firstObject;

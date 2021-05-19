@@ -243,22 +243,10 @@ NS_ASSUME_NONNULL_BEGIN
  
  */
 -(void)updateThumbnailForPageId:(NSString *)pageId_ image:(NSString *)imagePath;
-/**
- 
- 
- 
- 
- */
--(void)insertImage:(NSString *)path_ rect:(CGRect)rect_;
 
--(void)insertImageFromAlbum:(CGRect)rect_;
-/**
-     * 向当前白板页中插入文件
-     *
-     * @param file_ 文件配置信息
-     *
-     * @implNote 仅在房间加入成功后有效，会同时触发{@link WhiteBoardListener#onWidgetActionEvent(WidgetActionEvent)}
-*/
+
+
+
 -(void)insertFile:(LATFileInfo *)config_;
 
 /**

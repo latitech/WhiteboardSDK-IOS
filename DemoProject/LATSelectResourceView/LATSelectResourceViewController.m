@@ -100,13 +100,10 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         
     }];
-    for(id value in info.allKeys)
-    {
-        NSLog(@"%@",value);
-    }
     NSString* path = [LATUtils saveImagetoLocation:info[UIImagePickerControllerOriginalImage] location:ImageCachePath];
-
-    [[LATWhiteboardControl instance] insertImage:path rect:DefaultInputRect];
+    
+    LATFileInfo * fileInfo = [[LATFileInfo alloc] initWithParams:path withName:path.lastPathComponent withLeft:DefaultInputRect.origin.x withTop:DefaultInputRect.origin.y withWidth:DefaultInputRect.size.width withHeight:DefaultInputRect.size.height];
+    [[LATWhiteboardControl instance] insertFile:fileInfo];
  
 }
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -121,6 +118,7 @@
             [self showImagePickerView:YES];
             break;
         case AVAuthorizationStatusDenied:
+            
             break;
         case AVAuthorizationStatusNotDetermined:
         {
@@ -128,7 +126,9 @@
                 if(granted)
                 {
                     NSLog(@"granted");
-                    [self showImagePickerView:YES];
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [self showImagePickerView:YES];
+                    });
                 }
                 else
                 {

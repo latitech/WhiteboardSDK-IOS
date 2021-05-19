@@ -24,11 +24,46 @@
     // Drawing code
 }
 */
--(void)awakeFromNib
+-(instancetype)initWithFrame:(CGRect)frame
 {
-    [super awakeFromNib];
-
+    if(self = [super initWithFrame:frame])
+    {
+        [self appendButtonsForImages:@[@"selectIcon",@"PenIcon",@"eraseIcon",@"geometryIcon",@"laserIcon",@"fileIcon"]];
+        self.delegate = self;
+    }
+    return self;
 }
 
-
+-(void)buttonGroup:(MWButtonGroup *)buttonGroup didSelectButtonAtIndex:(NSUInteger)index
+{
+    switch(index)
+    {
+        case 0:
+            [self.barDelegate switchInputMode:LATToolbarInputSelect];
+            break;
+        case 1:
+            [self.barDelegate switchInputMode:LATToolbarInputPencil];
+            break;
+        case 2:
+            [self.barDelegate switchInputMode:LATToolbarInputErase];
+            break;
+        case 3:
+            [self.barDelegate switchInputMode:LATToolbarInputGeometry];
+            break;
+        case 4:
+            [self.barDelegate switchInputMode:LATToolbarInputLaser];
+            break;
+        case 5:
+            //file
+            [self.barDelegate switchInputMode:LATToolbarInputFile];
+            break;
+        default:
+            break;
+            
+    }
+}
+-(void)updateSelection
+{
+    
+}
 @end

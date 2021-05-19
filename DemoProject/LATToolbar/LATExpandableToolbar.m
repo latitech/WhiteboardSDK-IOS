@@ -13,16 +13,12 @@
 #import "LATEraseToolbar.h"
 #import "LATLaserToolbar.h"
 #import "LATGeometryToolbar.h"
+#import "LATToolbarColorButton.h"
+#import "LATSizeSelectionToolbar.h"
+#import "LATColorToolbar.h"
+#import "LATSubjectToolbar.h"
 
-typedef NS_ENUM(NSInteger,LATToolbarEventName)
-{
-    LATToolbarEventPencil,
-    LATToolbarEventErase,
-    LATToolbarEventLaser,
-    LATToolbarEventSelect,
-    LATToolbarEventGeometry,
-    LATToolbarEventFile,
-};
+
 typedef NS_ENUM(NSInteger,LATToolbarStatus)
 {
     LATToolbarStatusShowNothing,
@@ -32,8 +28,9 @@ typedef NS_ENUM(NSInteger,LATToolbarStatus)
     LATToolbarStatusShowEraseDetail,
     LATToolbarStatusShowLaser,
     LATToolbarStatusShowGeometry,
-    LATToolbarStatusShowGeometrySimpleDetail,
-    LATToolbarStatusShowGeometryComplexDetail,
+    LATToolbarStatusShowGeometrySizeSelect,
+    LATToolbarStatusShowGeometryColorSelect,
+    LATToolbarStatusShowGeometrySubjectDetail,
     LATToolbarStatusShowSelection
 };
 
@@ -46,17 +43,13 @@ typedef NS_ENUM(NSInteger,LATToolbarStatus)
     LATInputConfig * geometryConfig;
     LATInputConfig * laserConfig;
     
-    LATSelectResourceViewController * resourceView;
-    
-    
+    LATInputConfig * currentInputConfig;
     LATToolbarStatus status;
-    
-    
-    LATPrimaryToolbar * primaryBar;
-    LATPenToolbar * penBar;
-    LATEraseToolbar * eraseBar;
-    LATLaserToolbar * laserBar;
     LATGeometryToolbar * geometryBar;
+    LATPenToolbar * penBar;
+    LATSizeSelectionToolbar * sizeBar;
+    
+    LATSelectResourceViewController * resourceVC;
 }
 @end
 
@@ -64,163 +57,100 @@ typedef NS_ENUM(NSInteger,LATToolbarStatus)
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 -(instancetype)init
 {
     if(self = [super init])
     {
         self.axis = UILayoutConstraintAxisVertical;
         self.distribution = UIStackViewDistributionFillProportionally;
-        self.alignment = UIStackViewAlignmentFill;
-        self.spacing = 10;
-
-        self.backgroundColor = UIColor.blueColor;
-        
-        primaryBar = [[NSBundle bundleForClass:[LATPrimaryToolbar class] ]  loadNibNamed:@"LATPrimaryToolbar" owner:self options:nil].firstObject;
-        primaryBar.frame = CGRectMake(0, 0, primaryBar.frame.size.width, 40);
-        
-        penBar = [[NSBundle bundleForClass:[LATExpandableToolbar class] ] loadNibNamed:@"LATPenToolbar" owner:self options:nil].firstObject;
-        penBar.frame = CGRectMake(0, 0, penBar.frame.size.width, 40);
+        self.alignment = UIStackViewAlignmentCenter;
+        self.spacing = 5;
         
         
-        eraseBar = [[NSBundle bundleForClass:[LATExpandableToolbar class] ] loadNibNamed:@"LATEraseToolbar" owner:self options:nil].firstObject;
-        eraseBar.frame = CGRectMake(0, 0, eraseBar.frame.size.width, 40);
+//        self.backgroundColor = UIColor.blueColor;
         
-        laserBar = [[NSBundle bundleForClass:[LATExpandableToolbar class] ] loadNibNamed:@"LATLaserToolbar" owner:self options:nil].firstObject;
-        laserBar.frame = CGRectMake(0, 0, laserBar.frame.size.width, 40);
+        [self addToolbar:[[LATPrimaryToolbar alloc] initWithFrame:CGRectMake(0, 0, 280, 44)]];
+            
+        penBar = (LATPenToolbar *)[self addToolbar:[[LATPenToolbar alloc] initWithFrame:CGRectMake(0, 0, 460 ,44)]];
         
-        geometryBar = [[NSBundle bundleForClass:[LATExpandableToolbar class] ] loadNibNamed:@"LATGeometryToolbar" owner:self options:nil].firstObject;
-        geometryBar.frame = CGRectMake(0, 0, laserBar.frame.size.width, 40);
+        [self addToolbar:[[LATEraseToolbar alloc] initWithFrame:CGRectMake(0, 0, 240, 44)]];
         
-        [self addArrangedSubview:primaryBar];
-        
-        [self addArrangedSubview:penBar];
+        [self addToolbar:[[LATLaserToolbar alloc] initWithFrame:CGRectMake(0, 0, 198, 44)]];
         
         
+        geometryBar = (LATGeometryToolbar *)[self addToolbar:[[LATGeometryToolbar alloc] initWithFrame:CGRectMake(0, 0,280, 44)]];
         
-        [self addArrangedSubview:laserBar];
+        sizeBar = (LATSizeSelectionToolbar *)[self addToolbar:[[LATSizeSelectionToolbar alloc] initWithFrame:CGRectMake(0, 0, 180, 44 )]];
         
-        [self addArrangedSubview:eraseBar];
+        [self addToolbar:[[LATColorToolbar alloc] initWithFrame:CGRectMake(0, 0, 308, 44)]];
         
-        [self addArrangedSubview:geometryBar];
-        
-        penBar.hidden = YES;
-        eraseBar.hidden = YES;
-        laserBar.hidden = YES;
-        geometryBar.hidden = YES;
         
         penConfig = [LATInputConfig instanceWithPen:@"#FF000000" thickness:2.0f];
-        eraserConfig = [LATInputConfig instanceWithErase:5.0];
+        eraserConfig = [LATInputConfig instanceWithErase:40.0];
         selectConfig = [LATInputConfig instanceWithSelect];
         laserConfig = [LATInputConfig instanceWithLaser:LATLaserTypeHand];
-        geometryConfig = [LATInputConfig instanceWithGeometry:LATGeometryTypeRectangle color:@"FF000000" thickness:2.0f];
+        geometryConfig = [LATInputConfig instanceWithGeometry:LATGeometryTypeRectangle color:@"FF000000" thickness:4.0f];
         
         status = LATToolbarStatusShowNothing;
-    
+        
+        currentInputConfig = penConfig;
+        
+        [penConfig addObserver:penBar forKeyPath:NSStringFromSelector(@selector(size)) options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        [penConfig addObserver:penBar forKeyPath:NSStringFromSelector(@selector(penType)) options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        [penConfig addObserver:sizeBar forKeyPath:NSStringFromSelector(@selector(penType)) options:NSKeyValueObservingOptionNew context:nil];
+        [geometryConfig addObserver:geometryBar forKeyPath:NSStringFromSelector(@selector(size)) options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        [geometryConfig addObserver:geometryBar forKeyPath:NSStringFromSelector(@selector(color)) options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        
+        
+        [self refreshToolbar];
+        
     }
     return self;
 }
-
-
-- (IBAction)ItemSelected:(UIBarButtonItem *)sender {
-    NSLog(@"clicked %@",sender.title);
-    NSString * mode = sender.title;
-    if(mode == nil)
+-(void)willMoveToSuperview:(UIView *)newSuperview
+{
+    if(newSuperview == nil)
     {
-        return;
-    }
-    if([mode isEqualToString:@"pen"])
-    {
-        [[LATWhiteboardControl instance] setInputMode:penConfig];
+        [penConfig removeObserver:penBar forKeyPath:NSStringFromSelector(@selector(size))];
+        [penConfig removeObserver:penBar forKeyPath:NSStringFromSelector(@selector(penType))];
         
-        [self processEvent:LATToolbarEventPencil];
-        
-    }
-    else if([mode isEqualToString:@"eraser"])
-    {
-        [[LATWhiteboardControl instance] setInputMode:eraserConfig];
-        [self processEvent:LATToolbarEventErase];
-    }
-    else if([mode isEqualToString:@"select"])
-    {
-        [[LATWhiteboardControl instance] setInputMode:selectConfig];
-    }
-    else if([mode isEqualToString:@"file"])
-    {
-//        if(resourceView == nil)
-//        {
-//            self.resourceView = [[LATSelectResourceViewController alloc] initWithNibName:@"LATSelectResourceViewController" bundle:[NSBundle bundleForClass:[LATPrimaryToolbar class]]];
-////            resourceView.uiDelegate = self.delegate;
-//        }
-//        [self. presentViewController:resourceView];
-//        [self.delegate createResourceView];
-       
-    }
-    else if([mode isEqualToString:@"laser"])
-    {
-        [[LATWhiteboardControl instance] setInputMode:laserConfig];
-        [self processEvent:LATToolbarEventLaser];
-    }
-    else if([mode isEqualToString:@"geometry"])
-    {
-        [[LATWhiteboardControl instance] setInputMode:geometryConfig];
-        [self processEvent:LATToolbarEventGeometry];
+        [geometryConfig removeObserver:geometryBar forKeyPath:NSStringFromSelector(@selector(size))];
+        [geometryConfig removeObserver:geometryBar forKeyPath:NSStringFromSelector(@selector(color))];
     }
 }
-
--(void)processEvent:(LATToolbarEventName)eventName_
+-(LATBaseToolbar *)addToolbar:(LATBaseToolbar *)bar
 {
-   
-    switch(eventName_)
-    {
-        case LATToolbarEventPencil:
-        {
-            if(status != LATToolbarStatusShowPencil)
-            {
-                status = LATToolbarStatusShowPencil;
-            }
-            else
-            {
-                status = LATToolbarStatusShowNothing;
-            }
-        }
-            break;
-        case LATToolbarEventErase:
-        {
-            if(status != LATToolbarStatusShowErase)
-            {
-                status = LATToolbarStatusShowErase;
-            }
-            else
-            {
-                status = LATToolbarStatusShowNothing;
-            }
-        }
-            break;
-        case LATToolbarEventLaser:
-            if(status != LATToolbarStatusShowLaser)
-            {
-                status = LATToolbarStatusShowLaser;
-            }
-            else
-            {
-                status = LATToolbarStatusShowNothing;
-            }
-            break;
-        case LATToolbarEventGeometry:
-            if(status != LATToolbarEventGeometry)
-            {
-                status = LATToolbarStatusShowGeometry;
-            }
-            else
-                status = LATToolbarStatusShowNothing;
-    }
-    [self refreshToolbar];
+    bar.hidden = NO;
+    bar.layer.cornerRadius = 10;
+    bar.layer.masksToBounds = YES;
+    bar.barDelegate = self;
+    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeWidth  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:bar.frame.size.width];
+    
+    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:bar.frame.size.height];
+    [bar addConstraints:@[width,height]];
+    
+    
+    [self addArrangedSubview:bar];
+    
+    return bar;
+}
+
+-(LATBaseToolbar *)loadToolbarFromNib:(NSString *)nibName owner:(id)target
+{
+    LATBaseToolbar *bar  = [[NSBundle bundleForClass:[LATPrimaryToolbar class] ]  loadNibNamed:nibName owner:target options:nil].firstObject;
+    bar.hidden = NO;
+    bar.layer.cornerRadius = 10;
+    bar.layer.masksToBounds = YES;
+    bar.barDelegate = self;
+    
+    [self addArrangedSubview:bar];
+    return bar;
 }
 
 -(void)refreshToolbar
@@ -229,48 +159,75 @@ typedef NS_ENUM(NSInteger,LATToolbarStatus)
     {
         case LATToolbarStatusShowPencil:
         {
-            [self showSubMenu:[LATPenToolbar class]];
+            [self showSubMenu:@[[LATPenToolbar class]]];
+        }
+            break;
+        case LATToolbarStatusShowPencilDetail:
+        {
+            [self showSubMenu:@[[LATPenToolbar class],[LATSizeSelectionToolbar class]]];
         }
             break;
         case LATToolbarStatusShowErase:
         {
-            [self showSubMenu:[LATEraseToolbar class]];
+            [self showSubMenu:@[[LATEraseToolbar class]]];
         }
             break;
         case LATToolbarStatusShowLaser:
         {
-            [self showSubMenu:[LATLaserToolbar class]];
+            [self showSubMenu:@[[LATLaserToolbar class]]];
         }
             break;
         case LATToolbarStatusShowGeometry:
-            [self showSubMenu:[LATGeometryToolbar class]];
+            [self showSubMenu:@[[LATGeometryToolbar class]]];
             break;
-             
+        case LATToolbarStatusShowGeometrySizeSelect:
+            [self showSubMenu:@[[LATGeometryToolbar class],[LATSizeSelectionToolbar class]]];
+            break;
+        case LATToolbarStatusShowGeometryColorSelect:
+            [self showSubMenu:@[[LATGeometryToolbar class],[LATColorToolbar class]]];
+            break;
+        case LATToolbarStatusShowGeometrySubjectDetail:
+            [self showSubMenu:@[[LATGeometryToolbar class],[LATSubjectToolbar class]]];
+            break;
         case LATToolbarStatusShowNothing:
-            [self hideAllSubMenus];
+            [self showSubMenu:@[[LATPrimaryToolbar class]]];
+            break;
             
     }
 }
 
--(void)showSubMenu:(Class)viewType
+-(void)showSubMenu:(NSArray<Class> *)views
 {
     if(self.arrangedSubviews.count > 1)
     {
         for(int i = 1; i < self.arrangedSubviews.count ; i ++)
         {
-            UIView * view = self.arrangedSubviews[i];
-            if([view isKindOfClass:viewType])
+            LATBaseToolbar * toolbar = (LATBaseToolbar *)self.arrangedSubviews[i];
+            if([views containsObject:[toolbar class]])
             {
-                NSLog(@"frame:%dx%d",view.frame.size.width,view.frame.size.height);
-                view.hidden = NO;
+                toolbar.hidden = NO;
+                
+                [toolbar updateSelection];
             }
             else
-                self.arrangedSubviews[i].hidden = YES;
+                toolbar.hidden = YES;
         }
     }
     [self layoutSubviews];
 }
-
+-(UIView *)getSubviewByType:(Class)type_
+{
+    for(int i = 0; i < self.arrangedSubviews.count ; i ++)
+    {
+        
+        if([self.arrangedSubviews[i] isKindOfClass:type_])
+        {
+            return self.arrangedSubviews[i];
+        }
+        
+    }
+    return nil;
+}
 -(void)hideAllSubMenus
 {
     if(self.arrangedSubviews.count > 1)
@@ -284,18 +241,191 @@ typedef NS_ENUM(NSInteger,LATToolbarStatus)
 -(void)addConstraintToParent:(UIView *)parent_
 {
     self.translatesAutoresizingMaskIntoConstraints = false;
-
+    
     
     NSLayoutConstraint *barTop = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:parent_ attribute:NSLayoutAttributeTop multiplier:1.0 constant:20];
     NSLayoutConstraint *barRight = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRightMargin relatedBy:NSLayoutRelationEqual toItem:parent_ attribute:NSLayoutAttributeRightMargin multiplier:1.0 constant:-20];
     
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:400];
+    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:500];
     
     [parent_ addConstraints:[NSArray arrayWithObjects:barTop,barRight,width,nil]];
 }
 
-- (IBAction)changeEraseSizeAction:(UIBarButtonItem *)sender {
+
+-(LATInputConfig *)getInputConfigByMode:(LATToolbarInputName)mode_
+{
+    switch(mode_)
+    {
+        case LATToolbarInputPencil:
+            return penConfig;
+        case LATToolbarInputErase:
+            return eraserConfig;
+        case LATToolbarInputSelect:
+            return selectConfig;
+        case LATToolbarInputGeometry:
+            return geometryConfig;
+        case LATToolbarInputLaser:
+            return laserConfig;
+        default:
+            return nil;
+    }
+}
+
+
+-(void)sendInputConfig:(LATToolbarInputName)mode_
+{
+    LATInputConfig * config = [self getInputConfigByMode:mode_];
+    if(config)
+    {
+        currentInputConfig = config;
+        [[LATWhiteboardControl instance] setInputMode:currentInputConfig];
+    }
+}
+
+-(void)onMenuEntryTaped:(LATToolbarMenuKey)menu_
+{
+    switch(menu_)
+    {
+        case LATToolbarMenuGeometrySize:
+        {
+            if(status == LATToolbarStatusShowGeometrySizeSelect)
+            {
+                //hide it
+                status = LATToolbarStatusShowGeometry;
+            }
+            else
+            {
+                status = LATToolbarStatusShowGeometrySizeSelect;
+            }
+        }
+            break;
+        case LATToolbarMenuGeometryColor:
+        {
+            if(status == LATToolbarStatusShowGeometryColorSelect)
+            {
+                //hide it
+                
+                status = LATToolbarStatusShowGeometry;
+            }
+            else
+            {
+                status = LATToolbarStatusShowGeometryColorSelect;
+            }
+        }
+            break;
+        case LATToolbarMenuGeometryMath:
+        case LATToolbarMenuGeometryPhysics:
+        case LATToolbarMenuGeometryChemetry:
+        {
+            if(status == LATToolbarStatusShowGeometrySubjectDetail)
+            {
+                status = LATToolbarStatusShowGeometry;
+            }
+            else
+            {
+                status = LATToolbarStatusShowGeometrySubjectDetail;
+            }
+        }
+            break;
+        case LATToolbarMenuPenSize:
+        {
+            if(status == LATToolbarStatusShowPencilDetail)
+            {
+                
+                status = LATToolbarStatusShowPencil;
+            }
+            else
+            {
+                status = LATToolbarStatusShowPencilDetail;
+            }
+        }
+            break;
+    }
+    [self refreshToolbar];
+}
+
+-(void)switchInputMode:(LATToolbarInputName)mode_
+{
+    switch(mode_)
+    {
+        case LATToolbarInputPencil:
+            if(status == LATToolbarStatusShowPencil)
+                status = LATToolbarStatusShowNothing;
+            else
+                status = LATToolbarStatusShowPencil;
+            break;
+        case LATToolbarInputSelect:
+            status = LATToolbarStatusShowNothing;
+            break;
+        case LATToolbarInputGeometry:
+            if(status == LATToolbarStatusShowGeometry||
+               status == LATToolbarStatusShowGeometrySizeSelect||
+               status == LATToolbarStatusShowGeometryColorSelect ||
+               status == LATToolbarStatusShowGeometrySubjectDetail)
+            {
+                status = LATToolbarStatusShowNothing;
+            }
+            else
+                status = LATToolbarStatusShowGeometry;
+            break;
+        case LATToolbarInputErase:
+            if(status == LATToolbarStatusShowErase)
+            {
+                status = LATToolbarStatusShowNothing;
+            }
+            else
+                status = LATToolbarStatusShowErase;
+            
+            break;
+        case LATToolbarInputLaser:
+            if(status == LATToolbarStatusShowLaser)
+            {
+                status = LATToolbarStatusShowNothing;
+            }
+            else
+                status = LATToolbarStatusShowLaser;
+            break;
+        case LATToolbarInputFile:
+        {
+            status = LATToolbarStatusShowNothing;
+            [self popSelectResourceView];
+        }
+            break;
+    }
+    [self refreshToolbar];
+    [self sendInputConfig:mode_];
+}
+-(BOOL)isViewHidden:(Class)view_
+{
+    UIView * target = [self getSubviewByType:view_];
+    if(target)
+    {
+        return target.hidden;
+    }
+    return NO;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if([object isEqual:penConfig])
+    {
+        NSLog(@"new size:%.2f\n",penConfig.size);
+        NSLog(@"changed:%@",change);
+    }
+}
+-(LATInputConfig *)getActiveInputConfig
+{
+    return currentInputConfig;
+}
     
-    NSLog(@"erase %@ clicked",sender.title);
+-(void)popSelectResourceView
+{
+    if(resourceVC == nil)
+    {
+        resourceVC = [[LATSelectResourceViewController alloc] initWithNibName:@"LATSelectResourceViewController" bundle:[NSBundle bundleForClass:[LATSelectResourceViewController class]]];
+        resourceVC.uiDelegate = self.uiDelegate;
+    }
+    [self.uiDelegate presentViewController:resourceVC];
+    
+    
 }
 @end

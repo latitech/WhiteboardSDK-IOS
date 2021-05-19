@@ -27,8 +27,11 @@ typedef NS_ENUM(NSInteger,LATInputMode)
     /**
      * 几何图形
      */
-    LATInputModeGeometry
-    
+    LATInputModeGeometry,
+    /**
+     * 激光笔
+     */
+    LATInputModeLaser
 };
 typedef NS_ENUM(NSInteger,LATPenStyle)
 {

@@ -6,15 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LATToolbarDelegate.h"
 
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LATExpandableToolbar : UIStackView
+@interface LATExpandableToolbar : UIStackView <LATToolbarDelegate>
 
+@property (nonatomic,weak) id<LATUIDelegate> uiDelegate;
 
--(void)onPrimaryModeChanged:(NSString * )mode;
 -(void)addConstraintToParent:(UIView *)parent_;
 @end
 

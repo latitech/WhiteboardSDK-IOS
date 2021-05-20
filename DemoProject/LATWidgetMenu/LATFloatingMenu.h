@@ -11,11 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LATFloatingMenu : UIToolbar <UIToolbarDelegate>
+@interface LATFloatingMenu : UIStackView <LATWhiteboardDelegate>
 
 @property (weak,nonatomic) id<LATUIDelegate> delegate;
 
--(void)onWidgetActived:(LATActiveWidgetInfo *)widgetInfo_;
+-(void)onWidgetActive:(LATActiveWidgetInfo * _Nullable)widgetInfo_;
 -(void)layoutMenu:(UIView *)parent;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MWButtonGroup.h"
+#import "LATToolbarColorButton.h"
 
 @interface MWButtonGroup()
 
@@ -258,10 +259,28 @@
 
         if ([_selectedIndexSet containsIndex:i]) {
             
-            button.backgroundColor = self.buttonBackgroundColor;
+            if([button isKindOfClass:[LATToolbarColorButton class]])
+            {
+                
+                LATToolbarColorButton * colorBtn = (LATToolbarColorButton *)button;
+                colorBtn.colorSelected = YES;
+                [colorBtn setNeedsDisplay];
+            }
+            else
+            {
+             //   button.backgroundColor = self.buttonBackgroundColor;
+                [button setBackgroundImage:[UIImage imageNamed:@"toolbarBG" inBundle:[NSBundle bundleForClass:[LATToolbarColorButton class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+            }
         }
         else {
-            button.backgroundColor = self.textColor;
+            if([button isKindOfClass:[LATToolbarColorButton class]])
+            {
+                LATToolbarColorButton * colorBtn = (LATToolbarColorButton *)button;
+                colorBtn.colorSelected = NO;
+                [colorBtn setNeedsDisplay];
+            }
+            else
+                [button setBackgroundImage:nil forState:UIControlStateNormal];
         }
     }
 }

@@ -35,7 +35,7 @@
     {
         LATToolbarColorButton * button = [LATToolbarColorButton buttonWithType:UIButtonTypeRoundedRect];
         button.color = [self convertStringToUIColor:color];
-        button.scale = 0.7;
+        button.scale = 0.6;
         [result addObject:button];
         
     }

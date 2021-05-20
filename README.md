@@ -21,15 +21,38 @@ ios版本的白板控件的类前缀都是LAT,framework的名字是LATWhiteboard
 
 ## 直接使用白板控件
 白板控件的ViewController叫做LATWhiteboardViewController，可以直接放置到自己的界面中，也可以继承，然后自定义自己的实现
+初始化之后，需要调用白板的
+-  `initializeWhiteboard`视图初始化完毕后调用此接口来初始化白板
+- `closeWhiteboard` 在视图被销毁时调用此接口关闭白板
+
+在两个接口调用中间 
 ```
+-(void)viewDidLoad
+{
+    [super initalizeWhiteboard];
+    //接下来可以加入房间了
+}
 
-
-
+-(void)viewDidDisappear:(BOOL)animated
+{
+    if(self.isMovingFromParentViewController)
+    {
+        //离开房间先
+        [[LATWhiteboardControl instance] leaveRoom];
+		//销毁各种资源
+        [super closeWhiteboard];
+    
+    }
+}
 ```
+## 白板截图
+仅在[LATWhiteBoardViewController](#LATWhiteBoardViewController)附加到布局中时有效（即必须有可见的白板），屏幕截图是需要直接调用LATWhiteboardViewController的如下方法，无论是否在主线程都可以调用，返回是直接返回一个临时地址，存储了snapshot的图片，回调一定不是在主线程中。
+
+`-(void)snapShot:(CGRect)rect_ callback:(void(^)(NSString * _Nullable))callback_;`
 
 ## 加入房间
 
-首先访问自己的服务器获取要加入的白板房间的roomId,token,appId等参数（房间的创建和token的生成由服务器对接SDK服务端接口）。
+首先访问自己的服务器获取要加入的白板房间的roomId,token,appId等参数（房间的创建和token的生成由服务器对接SDK服务端接口）。此接口需要在白板初始化完成之后来进行
 
 首先构建进房参数[LATJoinConfig](#joinconfig)和[LATRoomMember](#joinconfig)然后执行[joinRoom](#joinroom)来加入房间。
 
@@ -46,16 +69,24 @@ ios版本的白板控件的类前缀都是LAT,framework的名字是LATWhiteboard
 ## 关闭并离开房间
 
 房间关闭时，或者在`ViewController.viewDidDispear`时，必须调用[leaveRoom](#leaveroom)来退出房间并释放资源，
-此方法会同时完成离开房间和资源释放，同时可以自动释放[AutoRemoveWhiteBoardListener](#autoremovewhiteboardlistener)类型的事件监听器（推荐），多次执行是安全的。
+此方法会同时完成离开房间和资源释放.
+(#autoremovewhiteboardlistener)类型的事件监听器（推荐），多次执行是安全的。
 
-通常情况会把它放在`Activity.onDestroy`中执行，比如：
+通常情况会把它放在`ViewDidDisappear`中执行，比如：
 
 ```leaveRoom
 
-    override fun onDestroy() {
-        WhiteBoard.leaveRoom()
-        super.onDestroy()
+-(void)viewDidDisappear:(BOOL)animated
+{
+    if(self.isMovingFromParentViewController)
+    {
+        //离开房间先
+        [[LATWhiteboardControl instance] leaveRoom];
+		//销毁各种资源
+        [super closeWhiteboard];
+    
     }
+}
 
 ```
 
@@ -204,13 +235,6 @@ ios版本的白板控件的类前缀都是LAT,framework的名字是LATWhiteboard
 
 可在任何时候调用。
 
-## screenshots
-
-`-(void)screenShots:(id<LATScreenShotsDelegate>)delegate_`
-
-白板截图
-
-仅在[LATWhiteBoardViewController](#LATWhiteBoardViewController)附加到布局中时有效（即必须有可见的白板），回调[LATScreenShotsDelegate](#LATScreenShotsDelegate)将在主线程执行。
 
 |参数|描述|
 |----|----|

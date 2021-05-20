@@ -26,6 +26,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerNib:[UINib nibWithNibName:@"LATPageInfoCell" bundle:[NSBundle bundleForClass:[LATPageListView class]]] forCellReuseIdentifier:@"page"];
     
+    self.tableView.layer.cornerRadius = 5.0f;
+    self.tableView.layer.masksToBounds = YES;
     
     [[LATWhiteboardControl instance] addListener:self];
     
@@ -71,10 +73,10 @@
         [cell.thumbnails sd_setImageWithURL:[NSURL URLWithString:[page getThumbnailUrl]]];
         if(cell.isSelected)
         {
-            cell.contentView.backgroundColor = UIColor.systemBlueColor;
+            cell.contentView.backgroundColor = UIColor.lightGrayColor;
         }
         else
-            cell.contentView.backgroundColor = UIColor.systemBackgroundColor;
+            cell.contentView.backgroundColor = UIColor.whiteColor;
        
     }
     return cell;
@@ -169,6 +171,6 @@
 }
 -(void)onBoardPageInfoChanged:(LATPageInfo *)page_
 {
-    [self.tableView reloadData];
+    [self.tableView reloadData];    
 }
 @end

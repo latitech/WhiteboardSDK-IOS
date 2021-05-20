@@ -14,10 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LATUIDelegate <NSObject>
 -(void)presentViewController:(UIViewController *)controller_;
--(void)appendSubView:(UIView *)view_;
--(void)removeSubView:(UIView *)view_;
--(void)createResourceView;
--(NSString *)snapShot:(CGRect)rect_;
+
+-(void)addChildView:(UIView *)view_;
+-(void)snapShot:(CGRect)rect_ callback:(void(^)(NSString * _Nullable))callback_;
 @end
 
 NS_ASSUME_NONNULL_END

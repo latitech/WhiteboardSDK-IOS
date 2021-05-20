@@ -27,16 +27,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="He6-YY-xhP">
-                        <rect key="frame" x="233" y="121" width="32" height="32"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="He6-YY-xhP" userLabel="insertBtn">
+                        <rect key="frame" x="209" y="132" width="32" height="32"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="newPage"/>
                         <connections>
                             <action selector="newPageAction:" destination="KGk-i7-Jjw" eventType="touchDown" id="PxL-IV-gmn"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ovy-tx-ton">
-                        <rect key="frame" x="6" y="121" width="32" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovy-tx-ton" userLabel="deleteBtn">
+                        <rect key="frame" x="20" y="132" width="32" height="32"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="delete"/>
                         <connections>
                             <action selector="deletePageAction:" destination="KGk-i7-Jjw" eventType="touchDown" id="n8O-9G-Q3o"/>
@@ -44,11 +45,13 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="He6-YY-xhP" secondAttribute="bottom" constant="20" id="3nX-jF-X2o"/>
+                    <constraint firstAttribute="bottom" secondItem="He6-YY-xhP" secondAttribute="bottom" constant="20" id="3nX-jF-X2o"/>
                     <constraint firstItem="DWL-4Y-MJM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4W9-7U-IdG"/>
+                    <constraint firstAttribute="bottom" secondItem="Ovy-tx-ton" secondAttribute="bottom" constant="20" id="BOk-CQ-2H7"/>
                     <constraint firstAttribute="trailing" secondItem="DWL-4Y-MJM" secondAttribute="trailing" constant="10" id="FWU-bx-Kjq"/>
+                    <constraint firstItem="Ovy-tx-ton" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Xy9-3O-xql"/>
                     <constraint firstItem="DWL-4Y-MJM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="eRp-bI-zqj"/>
-                    <constraint firstItem="He6-YY-xhP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="20" id="ksj-z0-EEp"/>
+                    <constraint firstItem="He6-YY-xhP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-20" id="ksj-z0-EEp"/>
                     <constraint firstAttribute="bottom" secondItem="DWL-4Y-MJM" secondAttribute="bottom" constant="10" id="oWQ-yb-q90"/>
                 </constraints>
             </tableViewCellContentView>

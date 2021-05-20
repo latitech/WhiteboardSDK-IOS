@@ -16,7 +16,6 @@
 #import "LATActiveWidgetInfo.h"
 #import "LATWhiteboardDelegate.h"
 #import "LATUIDelegate.h"
-#import "LATScreenShotsDelegate.h"
 #import "LATWhiteboardConfig.h"
 
 
@@ -123,8 +122,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(void)updateScreen;
 
-
--(void)screenShots:(id<LATScreenShotsDelegate>)delegate_;
 /**
  * 设置白板断线自动重连次数，默认为10次，设为0表示不自动重连
  *

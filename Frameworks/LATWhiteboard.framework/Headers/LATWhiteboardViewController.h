@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LATWhiteboardViewController : GLKViewController <GLKViewControllerDelegate,UIImagePickerControllerDelegate,LATWhiteboardDelegate,UIDocumentPickerDelegate,LATUIDelegate>
+@interface LATWhiteboardViewController : GLKViewController <GLKViewControllerDelegate,LATUIDelegate>
 
 -(bool)initRender:(CGSize)size;
 
@@ -20,6 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(void)presentViewController:(UIViewController *)controller_;
+
+
+
+-(void)initializeWhiteboard;
+-(void)closeWhiteboard;
 
 @end
 

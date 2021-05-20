@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LATToolbarColorButton : UIButton
 @property (retain,nonatomic) IBInspectable UIColor * color;
 @property (assign,nonatomic) CGFloat scale;
+@property (assign,nonatomic) BOOL colorSelected;
 @end
 
 NS_ASSUME_NONNULL_END

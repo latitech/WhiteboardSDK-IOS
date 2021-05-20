@@ -39,22 +39,20 @@
     
     
     
-    //添加退出按钮
+    //for test only
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 64, 64)];
     [button setImage:[UIImage imageNamed:@"logout" inBundle:[NSBundle bundleForClass:[LATWhiteboardControl class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [button setTintColor:UIColor.blackColor];
     [self.view addSubview:button];
     [button addTarget:self action:@selector(onBackPressed) forControlEvents:UIControlEventTouchDown];
     
-    //添加工具栏
+    
     toolbar = [[LATExpandableToolbar alloc] init];
-    toolbar.uiDelegate = self;
     [self.view addSubview:toolbar];
-    
     [toolbar addConstraintToParent:self.view];
+    toolbar.uiDelegate = self;
     
-    
-    //添加页导航
+
     pageControl = [[UINib nibWithNibName:@"LATPageControl" bundle:bundle] instantiateWithOwner:nil options:nil].firstObject;
     
     pageControl.translatesAutoresizingMaskIntoConstraints = NO;
@@ -63,18 +61,27 @@
     
     pageControl.uiDelegate = self;
     
-    //添加widget菜单
     floatingMenu = [[LATFloatingMenu alloc] init];
     floatingMenu.delegate = self;
    
     [self.view addSubview:floatingMenu];
     [floatingMenu layoutMenu:self.view];
     
+    [super initializeWhiteboard];
+   
     
-    //进入房间
     [self joinRoom];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    if(self.isMovingFromParentViewController)
+    {
+        [[LATWhiteboardControl instance] leaveRoom];
+        [super closeWhiteboard];
+    
+    }
+}
 
 -(void)onBackPressed
 {

@@ -65,7 +65,7 @@
     {
         _pageListView = [[LATPageListView alloc] initWithNibName:@"LATPageListView" bundle:[NSBundle bundleForClass:[LATPageListView class]]];
         
-        [self.uiDelegate appendSubView:self.pageListView.view];
+        [self.uiDelegate addChildView:self.pageListView.view];
         [self.pageListView setContraint:[self superview] pageCtrlView:self];
         
 //        [self.uiDelegate hidePageListView];

@@ -8,17 +8,24 @@
 #import "LATFloatingMenu.h"
 #import <LATWhiteboard/LATWhiteboard.h>
 
-
+typedef NS_ENUM(NSInteger,LATFloatingMenuKey)
+{
+    LATFloatingMenuDownload,
+    LATFloatingMenuDelete,
+    LATFloatingMenuPrevBtn,
+    LATFloatingMenuPageInfo,
+    LATFloatingMenuNextPage,
+};
 
 
 @interface LATFloatingMenu()
 {
     LATActiveWidgetInfo * activeWidget;
-    UIBarButtonItem * downloadBtn;
-    UIBarButtonItem * deleteBtn;
-    UIBarButtonItem * prevPageBtn;
-    UIBarButtonItem * nextPageBtn;
-    UIBarButtonItem * pageInfoLabel;
+    UIButton * downloadBtn;
+    UIButton * deleteBtn;
+    UIButton * prevPageBtn;
+    UIButton * nextPageBtn;
+    UIButton * pageInfoLabel;
     
 }
 @end
@@ -32,40 +39,45 @@
     // Drawing code
 }
 */
--(instancetype)initWithFrame:(CGRect)frame
+-(instancetype)init
 {
-    if(self = [super initWithFrame:frame]){
+    if(self = [super init])
+    {
+        self.axis = UILayoutConstraintAxisHorizontal;
+        self.distribution = UIStackViewDistributionFillProportionally;
+        self.alignment = UIStackViewAlignmentCenter;
+        self.spacing = 5;
         
-        downloadBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"download" inBundle:[NSBundle bundleForClass:[LATFloatingMenu class]] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(downloadAction)];
-        [downloadBtn setTintColor:UIColor.darkGrayColor];
-        deleteBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"delete" inBundle:[NSBundle bundleForClass:[LATFloatingMenu class]] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(deleteAction)];
-        [deleteBtn setTintColor:UIColor.darkGrayColor];
-        prevPageBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"prevPage" inBundle:[NSBundle bundleForClass:[LATFloatingMenu class]] compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(prevPageAction)];
-        [prevPageBtn setTintColor:UIColor.darkGrayColor];
+        self.layer.cornerRadius = 5;
+        self.layer.masksToBounds = YES;
         
-        UIImage * nextImage = [UIImage imageNamed:@"nextPage" inBundle:[NSBundle bundleForClass:[LATFloatingMenu class]] compatibleWithTraitCollection:nil];
-        if(nextImage == nil)
-        {
-            NSLog(@"nextImage is nullptr in FloatingMenu");
-        }
-        else
-        {
-            NSLog(@"nextImage is not null in FloatingMenu");
-        }
-        nextPageBtn = [[UIBarButtonItem alloc] initWithImage:nextImage style:UIBarButtonItemStylePlain target:self action:@selector(nextPageAction)];
-        [nextPageBtn setTintColor:UIColor.darkGrayColor];
         
-        pageInfoLabel = [[UIBarButtonItem alloc] initWithTitle:@"1/2" style:UIBarButtonItemStylePlain target:self action:@selector(onPageInfoAction)];
-        [pageInfoLabel setTintColor:UIColor.darkGrayColor];
+        downloadBtn = [self createButtonByImageName:@"download"];
+        [downloadBtn setTag:LATFloatingMenuDownload];
+        downloadBtn.hidden = YES;
         
-//        UIBarButtonItem * widgetControl = [[UIBarButtonItem alloc] initWithTitle:@"widgetControl"  style:UIBarButtonItemStylePlain target:nil action:nil];
-//        UIBarButtonItemGroup * group = [[UIBarButtonItemGroup alloc] initWithBarButtonItems:@[prevPageBtn,pageInfoLabel,nextPageBtn] representativeItem:widgetControl];
         
-        [self setItems:@[prevPageBtn,pageInfoLabel,nextPageBtn,/*downloadBtn,*/deleteBtn]];
+        deleteBtn = [self createButtonByImageName:@"delete"];
+        [deleteBtn setTag:LATFloatingMenuDelete];
         
-//        [self setItems:@[group,downloadBtn,deleteBtn]];
+        prevPageBtn = [self createButtonByImageName:@"prevPage"];
+        [prevPageBtn setTag:LATFloatingMenuPrevBtn];
+       
+        nextPageBtn = [self createButtonByImageName:@"nextPage"];
+        [nextPageBtn setTag:LATFloatingMenuNextPage];
+        
+        pageInfoLabel = [self createButtonByTitle:@"1/2"];
+        [pageInfoLabel setTag:LATFloatingMenuPageInfo];
+        
+        [self addArrangedSubview:downloadBtn];
+        [self addArrangedSubview:deleteBtn];
+        [self addArrangedSubview:prevPageBtn];
+        [self addArrangedSubview:pageInfoLabel];
+        [self addArrangedSubview:nextPageBtn];
         [self setBackgroundColor:UIColor.blackColor];
-        [self setBarTintColor:UIColor.whiteColor];
+        [self setTintColor:UIColor.whiteColor];
+        [[LATWhiteboardControl instance] addListener:self];
+        self.hidden = YES;
     }
     return self;
 }
@@ -101,21 +113,36 @@
 {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *pageHeight = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:36];
-    NSLayoutConstraint *pageWidth = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:260];
     
     NSLayoutConstraint *pageTop = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:20];
     NSLayoutConstraint *pageLeft = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeft multiplier:1.0 constant:20];
-    [parent addConstraints:[NSArray arrayWithObjects:pageWidth,pageHeight,pageLeft,pageTop,nil]];
+    [parent addConstraints:[NSArray arrayWithObjects:pageHeight,pageLeft,pageTop,nil]];
     
-    [self setHidden:YES];
+//    [self setHidden:YES];
 }
--(void)onWidgetActived:(LATActiveWidgetInfo *)widgetInfo_
+-(void)onWidgetActive:(LATActiveWidgetInfo *)widgetInfo_
 {
     activeWidget = widgetInfo_;
     if(activeWidget)
     {
-        NSString * pageInfo = [NSString stringWithFormat:@"%d/%d",activeWidget.currentPageNumber,activeWidget.pageCount];
-        pageInfoLabel.title = pageInfo;
+        if(activeWidget.type == LATWidgetTypeFile)
+        {
+            prevPageBtn.hidden = NO;
+            nextPageBtn.hidden = NO;
+            pageInfoLabel.hidden = NO;
+            
+            NSString * pageInfo = [NSString stringWithFormat:@"%d/%d",activeWidget.currentPageNumber,activeWidget.pageCount];
+            [pageInfoLabel setTitle:pageInfo forState:UIControlStateNormal];
+            
+            
+        }
+        else
+        {
+
+            prevPageBtn.hidden = YES;
+            nextPageBtn.hidden = YES;
+            pageInfoLabel.hidden = YES;
+        }
         [self setHidden:NO];
     }
     else
@@ -123,5 +150,39 @@
         [self setHidden:YES];
     }
 }
-
+-(UIButton *)createButtonByImageName:(NSString *)imageName
+{
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+        [btn setImage:[UIImage imageNamed:imageName inBundle:[NSBundle bundleForClass:[LATFloatingMenu class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(onButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    return btn;
+}
+-(UIButton *)createButtonByTitle:(NSString *)title
+{
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTintColor:UIColor.whiteColor];
+    return btn;
+}
+-(void)onButtonPressed:(UIButton *)sender
+{
+    NSLog(@"button %ld is pressed",(long)sender.tag);
+    switch(sender.tag)
+    {
+        case LATFloatingMenuPrevBtn:
+            [self prevPageAction];
+            break;
+        case LATFloatingMenuNextPage:
+            [self nextPageAction];
+            break;
+        case LATFloatingMenuDownload:
+            [self downloadAction];
+            break;
+        case LATFloatingMenuDelete:
+            [self deleteAction];
+            break;
+            
+    }
+}
 @end

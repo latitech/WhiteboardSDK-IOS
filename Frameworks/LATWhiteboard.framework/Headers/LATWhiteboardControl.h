@@ -19,6 +19,19 @@
 #import "LATWhiteboardConfig.h"
 
 
+typedef NS_ENUM(NSInteger,LATErrorNo)
+{
+    LAT_CODE_NETWORK_ERROR=100,//   网络不可用
+    LAT_CODE_SERVER_ERROR =101, //   服务器错误或繁忙
+    LAT_CODE_APP_ID_NOT_EXIST = 200,  //  appId不存在
+    LAT_CODE_ROOM_ID_NOT_EXIST = 201,//    roomId不存在
+    LAT_CODE_USER_ID_EMPTY = 202,//    userId为空
+    LAT_CODE_TOKEN_ERROR  = 203,//    token错误
+    LAT_CODE_CONNECT_ROOM_FAILED = 300, //    连接房间失败
+    LAT_CODE_PAGE_INFO_TIMEOUT = 301,//    等待页数据下发超时
+    LAT_CODE_ROOM_DISCONNECT = 302,//    房间连接中断，可能是网络波动，也可能是房间中传输了错误数据导致被服务器切断
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class LATWhiteboardViewController;

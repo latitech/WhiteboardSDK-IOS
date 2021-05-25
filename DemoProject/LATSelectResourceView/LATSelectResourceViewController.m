@@ -110,7 +110,7 @@
 }
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self dismissViewControllerAnimated:picker completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)requestAuthorization{
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];

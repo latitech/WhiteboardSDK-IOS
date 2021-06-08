@@ -54,7 +54,11 @@
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DemoViewController * demoEntry = [board instantiateViewControllerWithIdentifier:@"demoEntry"];
     [demoEntry initConnectionInfo:appIdStr roomId:roomIdStr userId:userIdStr token:tokenStr];
-    [self.navigationController pushViewController:demoEntry animated:YES];
+    demoEntry.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    [self.navigationController pushViewController:demoEntry animated:YES];
+    [self.navigationController presentViewController:demoEntry animated:YES completion:^{
+        
+    }];
 }
 - (IBAction)roomChanged:(UISegmentedControl *)sender {
     if(sender.selectedSegmentIndex == 0)

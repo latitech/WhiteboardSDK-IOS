@@ -81,12 +81,10 @@ namespace chatboard {
             io::fetchData _fetchData;
             
             io::bufferCallback _bufferCall;
-            
-            static std::shared_ptr<chatboard_init_interface> _instance;
 
         public:
 
-            static std::shared_ptr<chatboard_init_interface> instance();
+            static chatboard_init_interface *instance();
 
             /**
              处理所有UI控制命令

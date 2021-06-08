@@ -68,8 +68,9 @@
     [floatingMenu layoutMenu:self.view];
     
     [super initializeWhiteboard];
+    [self.view setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.0]];
    
-    
+
     [self joinRoom];
 }
 
@@ -85,7 +86,11 @@
 
 -(void)onBackPressed
 {
-    [self.navigationController popViewControllerAnimated:YES];
+//    [[LATWhiteboardControl instance] setBackgroundColor:@"#00ff0000"];
+//    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+            
+    }];
 }
 
 -(void)joinRoom
@@ -93,6 +98,7 @@
     LATJoinInfo * joinInfo = [[LATJoinInfo alloc] initWithParam:appId room:roomId user:userId  token:token];
     LATRoomMember * member = [[LATRoomMember alloc] initWithParams:userId session:nil role:6 name:nil avatar:nil];
     [[LATWhiteboardControl instance] joinRoom:joinInfo member:member];
+    [[LATWhiteboardControl instance] setBackgroundColor:@"#55FF0000"];
 }
                      
                      

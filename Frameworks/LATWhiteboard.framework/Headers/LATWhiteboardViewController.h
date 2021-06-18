@@ -8,11 +8,12 @@
 #import <GLKit/GLKit.h>
 
 #import "LATWhiteboardControl.h"
+
 #import "LATUIDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LATWhiteboardViewController : GLKViewController <GLKViewControllerDelegate,LATUIDelegate>
+@interface LATWhiteboardViewController : GLKViewController <GLKViewControllerDelegate,LATUIDelegate,LATWhiteboardDelegate>
 
 -(bool)initRender:(CGSize)size;
 

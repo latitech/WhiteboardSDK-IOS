@@ -59,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)init;
 
--(void)prepareRenderContext;
+-(void)prepareRenderContext:(int)width_ withHeight:(int)height_;
 -(void)destroyRenderContext;
 
 -(void)updateScreenSize:(float)width_ andHeight:(float)height_;

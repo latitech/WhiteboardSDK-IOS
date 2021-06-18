@@ -13,42 +13,10 @@
 #include <string>
 #include <vector>
 #include "chatboard_enum.h"
+#include "pointer_event.hpp"
 
 namespace chatboard::io::input {
-    enum class event_type {
-        pointer,
-        keyboard,
-        voice
-    };
-
-    enum class source_type {
-        mouse_left,
-        mouse_right,
-        keyboard,
-        pen,
-        touch,
-        remote,
-        wheel
-    };
-    enum class status_type {
-        start,
-        pending,
-        end,
-        cancel,
-        stationary,
-        hover,
-        wheel
-    };
-    enum class keyboard_type{
-        none,
-        ctrl,
-        shift,
-        alt,
-        up,
-        down,
-        left,
-        right
-    };
+   
 }
 
 namespace chatboard {
@@ -152,9 +120,9 @@ namespace chatboard {
              用户手势输入
              */
             void on_pointer_input(int _index, float _x, float _y, float _f,
-                                  chatboard::io::input::status_type _type,
-                                  chatboard::io::input::source_type _source,
-                                  unsigned long long _ts, float _size = 0,float _delta_x = 0,float _delta_y = 0,chatboard::io::input::keyboard_type _keyboard = chatboard::io::input::keyboard_type::none);
+                                  render::input::status_type _type,
+                                  render::input::source_type _source,
+                                  unsigned long long _ts, float _size = 0,float _delta_x = 0,float _delta_y = 0,render::input::keyboard_type _keyboard = render::input::keyboard_type::none);
 
 
             ///内部使用

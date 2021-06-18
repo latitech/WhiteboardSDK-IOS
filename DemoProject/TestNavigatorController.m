@@ -8,10 +8,17 @@
 #import "TestNavigatorController.h"
 #import "DemoViewController.h"
 
+#if 1
+#define TOKEN_FIRST @"127182d9a297292558aa3d935746827c";
+#define APP_ID @"a4b26ecae3744e3fb60ff679e186cd98";
+#define ROOM_ID_FIRST @"0f9ce36096bb4330bdee6ca9acd6b89f";
+#define USER_ID_FIRST @"07345de7-5a80-48d4-86fd-d75635525d7d";
+#else
 #define APP_ID @"fd3c029d48a64afeb5b46c24aedc2995"
 #define USER_ID_FIRST @"test1"
-#define ROOM_ID_FIRST @"4002a30317a4487db0fb1e1e0cf9401a"
-#define TOKEN_FIRST @"b5b011f8f0dac3ea6daa3fe611a0f590"
+#define ROOM_ID_FIRST @"aede5dfa1c194803b40799783b5d92c2"
+#define TOKEN_FIRST @"63e511d858589eab6d9e8a4d8029a1c0"
+#endif
 
 #define USER_ID_SECOND  @"0585184c-b515-4533-b146-1d39379e7d9a"
 #define ROOM_ID_SECOND  @"95daddc650294ddda5ea42d84dffe838"

@@ -11,7 +11,11 @@
 
 #include <stdio.h>
 #include <string>
+#ifdef _IOS_SDK
 #include "timeutil.h"
+#else
+#include "common/timeutil.h"
+#endif
 namespace chatboard::render::input
 {
 enum class event_type {

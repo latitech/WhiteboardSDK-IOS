@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#include <GLKit/GLKit.h>
 #import "Constant.h"
 #import "LATRoom.h"
 #import "LATInputConfig.h"
@@ -59,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)init;
 
--(void)prepareRenderContext:(int)width_ withHeight:(int)height_;
+-(void)prepareRenderContext:(int)width_ withHeight:(int)height_ context:(EAGLContext *)context_;
 -(void)destroyRenderContext;
 
 -(void)updateScreenSize:(float)width_ andHeight:(float)height_;

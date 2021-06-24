@@ -13,8 +13,11 @@
 #include <string>
 #include <vector>
 #include "chatboard_enum.h"
+#ifdef _IOS_SDK
 #include "pointer_event.hpp"
-
+#else
+#include "render/input/event/pointer_event.hpp"
+#endif
 namespace chatboard::io::input {
    
 }

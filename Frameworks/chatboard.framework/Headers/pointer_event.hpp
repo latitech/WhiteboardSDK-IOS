@@ -2,8 +2,11 @@
 #define POINTER_EVENT_HPP
 
 #include "base_event.hpp"
+#ifdef _IOS_SDK
 #include "point.hpp"
-
+#else
+#include "common/point.hpp"
+#endif
 namespace chatboard::render::input {
 
     class pointer_event : public base_event {

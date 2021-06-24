@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)addChildView:(UIView *)view_;
 -(void)snapShot:(CGRect)rect_ callback:(void(^)(NSString * _Nullable))callback_;
+-(void)onDocumentSize:(int)width_ height:(int)height_ max_w:(int)max_width max_h:(int)max_height;
 @end
 
 NS_ASSUME_NONNULL_END

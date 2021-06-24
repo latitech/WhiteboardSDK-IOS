@@ -78,8 +78,8 @@
 {
     if(self.isMovingFromParentViewController)
     {
-        [[LATWhiteboardControl instance] leaveRoom];
-        [super closeWhiteboard];
+//        [[LATWhiteboardControl instance] leaveRoom];
+//        [super closeWhiteboard];
     
     }
 }
@@ -89,7 +89,8 @@
 //    [[LATWhiteboardControl instance] setBackgroundColor:@"#00ff0000"];
 //    [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:^{
-            
+        [[LATWhiteboardControl instance] leaveRoom];
+        [super closeWhiteboard];
     }];
 }
 

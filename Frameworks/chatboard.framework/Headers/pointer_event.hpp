@@ -31,11 +31,17 @@ namespace chatboard::render::input {
         void set_size(float size);
 
         std::string desc() override;
+        
+        void set_delta(float delta_x,float deleta_y);
 
+        float delta_x() const;
+        float delta_y() const;
     protected:
         common::point _position;
         unsigned int _id;
         
+        float _delta_x;
+        float _delta_y;
         keyboard_type _keyboard_type;
 
         /// 接触面积

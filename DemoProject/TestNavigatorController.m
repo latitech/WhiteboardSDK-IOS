@@ -26,8 +26,8 @@
 
 #define APP_ID @"a4b26ecae3744e3fb60ff679e186cd98"
 #define USER_ID_FIRST @"test"
-#define ROOM_ID_FIRST @"ae4a29b6280e4c759fb2160cc6f5e3ec"
-#define TOKEN_FIRST @"d024cbe961938bf2bb6e56355a96d2c9"
+#define ROOM_ID_FIRST @"93819b26e87a484fb2b5dc311e36803e"
+#define TOKEN_FIRST @"76c159f30998f50d17554ba98ba4d93c"
 
 /*
 //from android

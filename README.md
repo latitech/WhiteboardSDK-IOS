@@ -124,6 +124,7 @@ ios版本的白板控件的类前缀都是LAT,framework的名字是LATWhiteboard
 |[deleteFile](#deletefile)|删除文件|
 |[recover](#recover)|撤销一次擦除的笔迹|
 |[screenshots](#screenshots)|白板截图|
+|[cleanPage](#cleanPage)|清空页面|
 
 ## 获取白板当前属性的方法
 
@@ -376,6 +377,18 @@ ios版本的白板控件的类前缀都是LAT,framework的名字是LATWhiteboard
 |参数|描述|
 |----|----|
 |pageId_|要删除的页id，此id来自于页数据，可通过[getPageList](#getpagelist)或[getCurrentPage](#getcurrentpage)获取页列表或当前显示页数据，也可通过[onBoardPageList](#onboardpagelist)和[onCurrentBoardPageChanged](#oncurrentboardpagechanged)回调来收集|
+
+## cleanPage
+
+清空白板页
+
+清除页面的所有内容，页面其他信息不变。
+
+|参数|描述|
+|----|----|
+|pageId_|要清空的页id，此id来自于页数据，可通过[getPageList](#getpagelist)或[getCurrentPage](#getcurrentpage)获取页列表或当前显示页数据，也可通过[onBoardPageList](#onboardpagelist)和[onCurrentBoardPageChanged](#oncurrentboardpagechanged)回调来收集|
+
+
 
 ## insertFile
 

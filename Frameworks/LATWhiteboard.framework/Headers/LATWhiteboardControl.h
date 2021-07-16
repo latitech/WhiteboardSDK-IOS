@@ -245,6 +245,12 @@ NS_ASSUME_NONNULL_BEGIN
 */
 -(void)deleteBoardPage:(NSString *)pageId_;
 
+/**
+ 
+ 清空指定页的内容
+ */
+-(void)cleanPage:(NSString *)pageId_;
+
 
 /**
  生成并且上传thumbail

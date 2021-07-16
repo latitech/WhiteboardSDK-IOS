@@ -65,6 +65,7 @@ namespace chatboard::render::engine
         int space_width();
         int space_height();
         
+        virtual common::rect getAtlasRect(const string  & name_) = 0;
         
         virtual bool setSteady(bool steady_);
         virtual bool steady();

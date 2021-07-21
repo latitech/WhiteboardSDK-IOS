@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A9674C1B54F8A28BA8EC206D /* Pods_DemoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA992D16E8941554DD4BA6E /* Pods_DemoProject.framework */; };
+		D67D143F26A8599D00B5FEA9 /* LATWhiteboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61726539925003B2049 /* LATWhiteboard.framework */; };
+		D67D144026A8599D00B5FEA9 /* LATWhiteboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61726539925003B2049 /* LATWhiteboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D6CE6DFC26390B3100C476C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6DFB26390B3100C476C6 /* AppDelegate.m */; };
 		D6CE6DFF26390B3100C476C6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6DFE26390B3100C476C6 /* SceneDelegate.m */; };
 		D6CE6E0526390B3100C476C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6CE6E0326390B3100C476C6 /* Main.storyboard */; };
@@ -36,14 +38,6 @@
 		D6CFA0DE26535018003B2049 /* LATPageCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0C326535018003B2049 /* LATPageCellHeader.xib */; };
 		D6CFA0DF26535018003B2049 /* LATSelectResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CFA0C526535018003B2049 /* LATSelectResourceViewController.xib */; };
 		D6CFA0E026535018003B2049 /* LATSelectResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA0C626535018003B2049 /* LATSelectResourceViewController.m */; };
-		D6CFA61D26539932003B2049 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61826539925003B2049 /* AFNetworking.framework */; };
-		D6CFA61E26539932003B2049 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61826539925003B2049 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D6CFA61F26539934003B2049 /* AliyunOSSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61626539925003B2049 /* AliyunOSSiOS.framework */; };
-		D6CFA62026539934003B2049 /* AliyunOSSiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61626539925003B2049 /* AliyunOSSiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D6CFA62126539936003B2049 /* chatboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61526539925003B2049 /* chatboard.framework */; };
-		D6CFA62226539936003B2049 /* chatboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61526539925003B2049 /* chatboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D6CFA62326539938003B2049 /* LATWhiteboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61726539925003B2049 /* LATWhiteboard.framework */; };
-		D6CFA62426539938003B2049 /* LATWhiteboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6CFA61726539925003B2049 /* LATWhiteboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D6CFA68026554C54003B2049 /* LATColorToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA67D26554C54003B2049 /* LATColorToolbar.m */; };
 		D6CFA68126554C54003B2049 /* LATBaseToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA67E26554C54003B2049 /* LATBaseToolbar.m */; };
 		D6CFA68B26554C61003B2049 /* LATToolbarColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CFA68226554C60003B2049 /* LATToolbarColorButton.m */; };
@@ -53,16 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D6CFA5F326538CD6003B2049 /* Embed Frameworks */ = {
+		D67D144126A8599D00B5FEA9 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D6CFA62026539934003B2049 /* AliyunOSSiOS.framework in Embed Frameworks */,
-				D6CFA62426539938003B2049 /* LATWhiteboard.framework in Embed Frameworks */,
-				D6CFA61E26539932003B2049 /* AFNetworking.framework in Embed Frameworks */,
-				D6CFA62226539936003B2049 /* chatboard.framework in Embed Frameworks */,
+				D67D144026A8599D00B5FEA9 /* LATWhiteboard.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +64,9 @@
 		020449DFD0879B54A74A8284 /* Pods-DemoProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProject.debug.xcconfig"; path = "Target Support Files/Pods-DemoProject/Pods-DemoProject.debug.xcconfig"; sourceTree = "<group>"; };
 		64CE1BA769886A34442556EC /* Pods-DemoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProject.release.xcconfig"; path = "Target Support Files/Pods-DemoProject/Pods-DemoProject.release.xcconfig"; sourceTree = "<group>"; };
 		BEA992D16E8941554DD4BA6E /* Pods_DemoProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67D14B226A866B000B5FEA9 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67D14B526A866B500B5FEA9 /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67D14B826A866B900B5FEA9 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CE6DF726390B3100C476C6 /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CE6DFA26390B3100C476C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6CE6DFB26390B3100C476C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,11 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6CFA62126539936003B2049 /* chatboard.framework in Frameworks */,
-				D6CFA62326539938003B2049 /* LATWhiteboard.framework in Frameworks */,
 				A9674C1B54F8A28BA8EC206D /* Pods_DemoProject.framework in Frameworks */,
-				D6CFA61F26539934003B2049 /* AliyunOSSiOS.framework in Frameworks */,
-				D6CFA61D26539932003B2049 /* AFNetworking.framework in Frameworks */,
+				D67D143F26A8599D00B5FEA9 /* LATWhiteboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +202,9 @@
 		D6CE6E1B26390D8000C476C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D67D14B826A866B900B5FEA9 /* SDWebImage.framework */,
+				D67D14B526A866B500B5FEA9 /* AliyunOSSiOS.framework */,
+				D67D14B226A866B000B5FEA9 /* AFNetworking.framework */,
 				D6CFA61826539925003B2049 /* AFNetworking.framework */,
 				D6CFA61626539925003B2049 /* AliyunOSSiOS.framework */,
 				D6CFA61526539925003B2049 /* chatboard.framework */,
@@ -312,7 +306,7 @@
 				D6CE6DF426390B3100C476C6 /* Frameworks */,
 				D6CE6DF526390B3100C476C6 /* Resources */,
 				2EBEFB407238B744C2838AF8 /* [CP] Embed Pods Frameworks */,
-				D6CFA5F326538CD6003B2049 /* Embed Frameworks */,
+				D67D144126A8599D00B5FEA9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

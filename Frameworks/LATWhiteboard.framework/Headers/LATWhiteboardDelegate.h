@@ -9,11 +9,13 @@
 #import "LATRoom.h"
 #import "LATRoomMember.h"
 #import "LATBoardInfo.h"
+#import "LATWidgetScrollInfo.h"
 #import "LATActiveWidgetInfo.h"
 #import "LATWidgetActionEvent.h"
 #import "LATInputConfig.h"
 #import "LATFileInfo.h"
 #import "LATPageInfo.h"
+
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -150,6 +152,15 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 -(void)onBoardScroll:(LATBoardInfo*)info_;
 
+
+/**
+ 页面被清空
+ @param pageId_ 被清空页面的id
+ */
+@optional
+-(void)onBoardCleaned:(NSString *)pageId_;
+
+
  /**
   * 白板背景色变化时触发，首次进入白板也会触发
   *
@@ -172,8 +183,17 @@ NS_ASSUME_NONNULL_BEGIN
   *
   * @param info 文件widget信息
   */
+
+
 @optional
 -(void)onFilePageChanged:(LATActiveWidgetInfo *)info;
+
+/**
+ 文档被滚动到顶部或者底部时触发
+ @param 文档滚动信息
+ */
+@optional
+-(void)onWidgetScrolled:(LATWidgetScrollInfo *)info;
 
  /**
   * 当widget被执行了某些关键动作时触发，比如新增和删除文件等

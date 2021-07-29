@@ -16,6 +16,7 @@
 #import "LATActiveWidgetInfo.h"
 #import "LATWhiteboardDelegate.h"
 #import "LATUIDelegate.h"
+#import "LATWidgetScrollInfo.h"
 #import "LATWhiteboardConfig.h"
 
 

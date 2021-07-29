@@ -86,11 +86,12 @@
 
 -(void)onBackPressed
 {
-    LATWhiteboardControl * control = [LATWhiteboardControl instance];
-    [control cleanPage:[control getCurrentPage].pageId];
+   
 //    [[LATWhiteboardControl instance] setBackgroundColor:@"#00ff0000"];
 //    [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:^{
+        LATWhiteboardControl * control = [LATWhiteboardControl instance];
+        [control cleanPage:[control getCurrentPage].pageId];
         [[LATWhiteboardControl instance] leaveRoom];
         [super closeWhiteboard];
     }];

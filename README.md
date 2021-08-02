@@ -169,7 +169,7 @@ ios版本的白板控件的类前缀都是LAT,framework的名字是LATWhiteboard
 |[onFilePageChanged](#onfilepagechanged)|文件被翻页|
 |[onWidgetActionEvent](#onwidgetactionevent)|widget被执行了某些关键动作|
 |[onRecoveryStateChanged](#onrecoverystatechanged)|笔迹回收站状态变化|
-
+[[onBoardCleaned]]（#onBoardCleaned)|页面被清空后的回调
 
 # LATWhiteBoardControl
 
@@ -653,9 +653,14 @@ office文件需要在线转换格式，所以画面呈现会相对慢一些。
 同时此事件触发早于[onJoinSuccess](#onjoinsuccess)，[onJoinFailed](#onjoinfailed)，[onReconnecting](#onreconnecting)等独立事件。
 比如调用[joinRoom](#joinroom)后会立即触发[LATBoardStatusLoading](#LATBoardStatusLoading)的变化，[onJoinSuccess](#onjoinsuccess)触发之前会先触发[LATBoardStatusSuccessful](#LATBoardStatusSuccessful)的变化。
 
+
+## onBoardCleaned
+`-(void)onBoardCleaned:(NSString *)pageId`
+当执行完(#cleanPage)之后产生的回调
+
 |参数|描述|
 |----|----|
-|[status_](#boardstatus)|新的白板状态|
+|[pageId](#boardId)|被清除的页面id|
 
 ## onUserList
 
